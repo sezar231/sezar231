@@ -315,7 +315,8 @@ ol.refs b{color:var(--primary)}
 .sbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--hero);color:var(--hero-ink);padding:.8rem 1rem calc(.85rem + env(safe-area-inset-bottom,0px));border-radius:22px 22px 0 0;box-shadow:0 -8px 24px rgba(0,0,0,.2)}
 .sbar-in{max-width:40rem;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.65rem 1rem;align-items:center}
 .sb-l{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.1rem}
-.sb-dot{width:.75rem;height:.75rem;border-radius:50%;background:var(--ok-line);animation:blink 1.1s ease-in-out infinite}
+.sb-dot{width:.75rem;height:.75rem;border-radius:50%;background:var(--hero-muted)}
+.sb-dot.on{background:var(--ok-line);animation:blink 1.1s ease-in-out infinite}
 @keyframes blink{50%{opacity:.25}}
 .sb-stop{display:inline-flex;align-items:center;gap:.4rem;min-height:3rem;padding:.35rem 1.1rem;border-radius:999px;border:2px solid var(--hero-line);background:transparent;color:var(--hero-ink);font:inherit;font-size:1.05rem;font-weight:800;cursor:pointer}
 .seg{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:.3rem;padding:.3rem;border-radius:999px;background:rgba(255,255,255,.12)}
@@ -753,7 +754,7 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
         </div>
         <p class="stepnum" data-nosay></p>
         <h2>Şikâyetiniz fazlaysa</h2>
-        <p>Yaralarınız fazlaysa ve beslenemiyorsanız, ağzınızı 2 saatte bir karbonatlı suyla çalkalayın. Doktorunuzun önerdiği gargara ilaçlarını kullanın.</p>
+        <p>Ağzınızdaki şikâyetler fazlaysa ve beslenemiyorsanız, ağzınızı 2 saatte bir karbonatlı suyla çalkalayın. Doktorunuzun önerdiği gargara ilaçlarını kullanın.</p>
         <p><strong>Ateşiniz 38 °C veya üzerindeyse randevu gününü beklemeden hemen başvurun.</strong></p>
         <p class="src">Kaynak: K1, K5</p>
         <a class="btn btn-danger-ghost" href="#acil"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg>Acil durumlar</a>
@@ -962,7 +963,7 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
 
 <div class="sbar" id="sbar" hidden role="region" aria-label="Sesli okuma">
   <div class="sbar-in">
-    <span class="sb-l"><span class="sb-dot" aria-hidden="true"></span>Okunuyor</span>
+    <span class="sb-l"><span class="sb-dot" id="sbDot" aria-hidden="true"></span><span id="sbLabel">Okunuyor</span></span>
     <button class="sb-stop" type="button" id="sbStop"><svg class="ic" aria-hidden="true"><use href="#i-stop"/></svg>Durdur</button>
     <div class="seg" role="group" aria-label="Okuma hızı">
       <button type="button" data-rate="0.85" aria-pressed="false">Yavaş</button>
@@ -972,6 +973,7 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
   </div>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script id="anlatim" type="application/json">{"klipler": [{"id": "ana", "metin": "Merhaba. Kemoterapi sırasında ağızda yaralar görülebilir. Buna mukozit, yani ağız içinin iltihaplanması ve yara oluşması denir. Bu etkiler genellikle geçicidir. Enfeksiyon yoksa çoğunlukla iki ile dört hafta içinde kendiliğinden iyileşir. Düzenli ağız bakımı, yaraları önlemeye yardımcı olur. Bu rehberde ağız bakımınızı birlikte, adım adım yapacağız. Her gün önce Bugün ağzım nasıl bölümünden ağzınızı kontrol edin. Sonra diş fırçalama ve gargara bölümlerine geçebilirsiniz. Şunları da unutmayın: Alkollü ya da gliserinli hazır gargara kullanmayın. Sigara ve alkolden uzak durun. Aspirin türü ağrı kesiciler kanama riskini artırır, bu yüzden kemoterapi sırasında kullanılmaz. Her ilacı, bitki çayını, vitamini ve takviyeyi kullanmadan önce doktorunuza ya da hemşirenize danışın. Kalp ilacı gibi düzenli kullandığınız bir ilacı da bırakmadan önce sorun."}, {"id": "kontrol-1", "metin": "Şimdi ağzınızı birlikte kontrol edelim. Size dört kısa soru soracağım. Cevabınıza dokunmanız yeterli. İlk soru: Ağzınızda ağrı ya da hassasiyet var mı? Yoksa Yok düğmesine, varsa Var düğmesine dokunun."}, {"id": "kontrol-2", "metin": "İkinci soru: Ağzınızın içine bakın. Kızarıklık ya da yara var mı? Hiçbiri yoksa Yok düğmesine, kızarıklık varsa Kızarıklık var düğmesine, yara varsa Yara var düğmesine dokunun."}, {"id": "kontrol-3", "metin": "Üçüncü soru: Bugün ne yiyip içebiliyorsunuz? Katı yiyecekleri yiyebiliyor musunuz, yalnızca sıvı mı alabiliyorsunuz, yoksa hiçbir şey yiyip içemiyor musunuz? Size uyan seçeneğe dokunun."}, {"id": "kontrol-4", "metin": "Son soru: Ateşiniz otuz sekiz derece ya da üzerinde mi? Ateşinizi ölçmediyseniz Ölçmedim düğmesine dokunun."}, {"id": "sonuc-ok", "metin": "Bugün ağzınızda bir değişiklik görünmüyor. Ağız bakımınıza böyle devam edin. Ağzınızı her gün, yara ya da beyaz leke yönünden kontrol edin. Unutmayın, bu sonuç bir tanı değildir."}, {"id": "sonuc-warn", "metin": "Ağzınızda bir değişiklik var. Ağrı, hassasiyet ya da yara gibi bir değişiklik fark ettiğinizde, bunu hemen doktorunuza ya da hemşirenize söyleyin. Bu arada ağız bakımınıza devam edin. Bu sonuç bir tanı değildir."}, {"id": "sonuc-danger", "metin": "Lütfen randevu gününüzü beklemeyin, hemen bir sağlık kuruluşuna başvurun. Acil bir durumda yüz on ikiyi arayın. Bu sonuç bir tanı değildir. Sonucu sağlık ekibinizle paylaşın."}, {"id": "sonuc-ates", "metin": "Bir de ateşinizi ölçün. Ateşiniz otuz sekiz derece ya da üzerindeyse, randevu gününü beklemeden hemen başvurun."}, {"id": "fircalama-1", "metin": "Şimdi dişlerinizi nasıl fırçalayacağınızı adım adım anlatacağım. Önce ne zaman fırçalayacağınızı bilelim: Dişlerinizi her yemekten sonra ve yatmadan önce fırçalayın."}, {"id": "fircalama-2", "metin": "Yumuşak, naylon kıllı bir diş fırçası kullanın. Bebek diş fırçası da olabilir."}, {"id": "fircalama-3", "metin": "Her fırçalamadan önce fırçanızı sıcak suyla yıkayın. Böylece kıllar yumuşar."}, {"id": "fircalama-4", "metin": "Naneli olmayan, hafif tatlı bir diş macunu seçin, örneğin çocuk diş macunu. Nane ağzınızı tahriş edebilir. Macun ağzınızı yakıyorsa, yaklaşık iki yüz kırk mililitre, yani bir bardak suya çeyrek çay kaşığı tuz karıştırın ve bu suyla fırçalayın."}, {"id": "fircalama-5", "metin": "Şimdi dişlerinizi, diş etlerinizi ve dilinizi nazikçe fırçalayın. Özellikle dişin diş etiyle birleştiği yere özen gösterin."}, {"id": "fircalama-6", "metin": "Her seferinde iki ile üç dakika fırçalayın. İsterseniz aşağıdaki sayacı başlatın. Süre dolunca size haber vereceğim."}, {"id": "fircalama-7", "metin": "Fırçaladıktan sonra fırçanızı havada kurumaya bırakın ve fırçanızı sık sık yenileyin. Fırçalama adımlarını tamamladınız."}, {"id": "fircalama-notlar", "metin": "Birkaç önemli not daha var. Ağzınızda yara ve ağrı çoksa diş fırçası kullanmayın. Steril, yani mikropsuz bir gazlı bezi parmağınıza sarın ve macunla dişlerinizi hırpalamadan ovun. Bu durumu ekibinize de haber verin. Diş ipi için: Trombosit, kanın pıhtılaşmasını sağlayan hücredir. Trombosit sayınız yeterliyse, yatmadan önce diş aralarınızı diş ipiyle nazikçe temizleyin. Kanama riskiniz olup olmadığını ekibinize sorun. Takma dişiniz varsa, ağzınıza iyi oturduğundan emin olun. Her yemekten sonra çıkarın ve ağzınızı çalkalayın. Takma dişinizi her gün yumuşak bir fırçayla temizleyin. Sıcak su kullanmayın, şekli bozulabilir. Geceleri, suyunu her gün değiştirdiğiniz kapaklı bir kapta saklayın. Ağzınızda yara ve şikâyet fazlaysa, takma dişinizi iyileşene kadar takmayın."}, {"id": "sayac-basla", "metin": "Fırçalamaya başlayabilirsiniz. Süreyi ben tutuyorum."}, {"id": "sayac-yari", "metin": "Yarısı tamam. Nazikçe fırçalamaya devam edin."}, {"id": "sayac-bitti", "metin": "Süre doldu. Dişlerinizi fırçaladınız, elinize sağlık."}, {"id": "gargara-1", "metin": "Karbonatlı su, ağızdaki asidi azaltır. Kuruluğu ve yaraları engellemeye yardımcı olur. Şimdi gargara suyunu birlikte hazırlayalım. Önce bir su bardağı su alın."}, {"id": "gargara-2", "metin": "Suyun içine bir çay kaşığı karbonat koyun ve karıştırın."}, {"id": "gargara-3", "metin": "Bu suyla ağzınızı bolca çalkalayın."}, {"id": "gargara-4", "metin": "Bunu yemeklerden sonra ve yatmadan önce yapın."}, {"id": "gargara-5", "metin": "Ağzınızdaki şikâyetler fazlaysa ve beslenemiyorsanız, ağzınızı iki saatte bir karbonatlı suyla çalkalayın. Doktorunuzun önerdiği gargara ilaçlarını kullanın. Ateşiniz otuz sekiz derece ya da üzerindeyse, randevu gününü beklemeden hemen başvurun."}, {"id": "gargara-notlar", "metin": "Son olarak, alkollü ve gliserinli hazır gargaraları kullanmayın. Ekibiniz size başka bir gargara önerdiyse onu kullanın. Hemşirenizden size uygun tarifi yazmasını isteyebilirsiniz."}, {"id": "yiyecek-giris", "metin": "Şimdi küçük bir oyun oynayalım. Ekranda bir yiyecek göreceksiniz. Ağzınızda yara ya da hassasiyet varken bu yiyecek uygunsa yeşil Uygun düğmesine, uygun değilse kırmızı Kaçının düğmesine dokunun."}, {"id": "dogru", "metin": "Doğru bildiniz."}, {"id": "tekrar", "metin": "Bir daha bakalım."}, {"id": "y-pure", "metin": "Patates püresi uygundur. Yumuşaktır ve kolay yutulur."}, {"id": "y-sutlac", "metin": "Sütlaç uygundur. Yumuşak bir tatlıdır ve kolay yutulur."}, {"id": "y-muhallebi", "metin": "Muhallebi uygundur. Muhallebi ve puding gibi yumuşak tatlılar uygundur."}, {"id": "y-muz", "metin": "Muz uygundur. Yumuşak bir meyvedir. Ekşi meyvelerin yerine seçilebilir."}, {"id": "y-yumurta", "metin": "Yumuşak yumurta uygundur. Yumuşak kıvamda pişmiş yumurta yiyebilirsiniz."}, {"id": "y-patates", "metin": "Haşlanmış patates uygundur. Yumuşaktır ve kolay yutulur."}, {"id": "y-makarna", "metin": "Makarna uygundur. Yumuşak bir yiyecektir."}, {"id": "y-peynir", "metin": "Yumuşak peynir uygundur. Ama tuzlu peynirden kaçının."}, {"id": "y-limon", "metin": "Limondan kaçının. Limon ekşidir. Ağzınızda yara varken limon ve ekşi meyvelerden uzak durun."}, {"id": "y-portakal", "metin": "Portakal suyundan kaçının. Ekşi meyve sularındandır."}, {"id": "y-domates", "metin": "Domates suyundan kaçının. Ekşidir."}, {"id": "y-cips", "metin": "Cipsten kaçının. Serttir, ağzınızın içini tahriş edebilir ve çizebilir."}, {"id": "y-kraker", "metin": "Krakerden kaçının. Kuru ve serttir, ağzınızı tahriş edebilir."}, {"id": "y-tost", "metin": "Kızarmış ekmek ve tosttan kaçının. Kuru ve serttir, ağzınızı tahriş edebilir."}, {"id": "y-biber", "metin": "Acı biber ve baharatlı yemeklerden kaçının. Acı ve baharatlı yiyecekler ağzınızı tahriş eder."}, {"id": "y-tursu", "metin": "Turşudan kaçının. Ekşi ve tuzludur."}, {"id": "y-cay", "metin": "Çok sıcak çaydan kaçının. Çok sıcak yiyecek ve içecekler ağzınızı tahriş eder. Biraz soğumasını bekleyin."}, {"id": "y-havuc", "metin": "Çiğ havuçtan kaçının. Çiğ sebzeler serttir."}, {"id": "y-greyfurt", "metin": "Greyfurttan kaçının. Ekşidir. Ayrıca kemoterapi ilaçlarıyla etkileşir."}, {"id": "y-alkol", "metin": "Alkollü içkiden kaçının. Alkolden uzak durun."}, {"id": "yiyecek-son", "metin": "Oyunu bitirdiniz. Birkaç ipucu vereyim. Bol sıvı alın. Kuru yiyecekleri su ya da yağla yumuşatın. Yiyecekleri doğrayın, ezin ya da blenderden geçirin. Böylece ağzınızda daha kısa kalır. Kalorisi ve proteini yüksek yiyecekler seçin."}, {"id": "takip", "metin": "Bu bölümde gün içinde yaptığınız bakımı işaretleyebilirsiniz. Sabah, öğle, akşam ve yatmadan önce dişlerinizi fırçaladıysanız ya da gargara yaptıysanız, ilgili kutuya dokunun. Alttaki tabloda bu haftaki bakımınızı görebilirsiniz. Bu kayıtlar yalnızca sizin telefonunuzda saklanır, hiçbir yere gönderilmez."}, {"id": "test-giris", "metin": "Bu bölümde öğrendiklerinizi kendi cümlelerinizle anlatacaksınız. Hemşireniz size soru soracak, siz de bildiğiniz gibi anlatacaksınız. Eksik kalan bir yer olursa hemşireniz yeniden anlatacak. İsterseniz Kendi kendime dene bölümünde kısa bir doğru yanlış testi de çözebilirsiniz."}, {"id": "tb-1", "metin": "Gargarayı nasıl hazırladığınızı ve ne zaman yaptığınızı bana anlatır mısınız?"}, {"id": "tb-2", "metin": "Dişlerinizi nasıl fırçaladığınızı bana anlatır mısınız?"}, {"id": "tb-3", "metin": "Ağzınızda yara varken hangi yiyeceklerden kaçınırsınız, neler yersiniz? Bana anlatır mısınız?"}, {"id": "tb-4", "metin": "Hangi durumlarda randevu gününü beklemeden hemen başvurursunuz? Bana anlatır mısınız?"}, {"id": "tb-5", "metin": "Ağrı kesici, bitki çayı ya da vitamin kullanmadan önce ne yaparsınız? Bana anlatır mısınız?"}, {"id": "qz-1", "metin": "Bu cümle doğru mu, yanlış mı? Gargara için bir su bardağı suya bir çay kaşığı karbonat koyarım."}, {"id": "qz-2", "metin": "Bu cümle doğru mu, yanlış mı? Alkollü hazır gargaralar ağız yaralarına iyi gelir."}, {"id": "qz-3", "metin": "Bu cümle doğru mu, yanlış mı? Ağrım olursa kendi başıma aspirin alabilirim."}, {"id": "qz-4", "metin": "Bu cümle doğru mu, yanlış mı? Ateşim otuz sekiz derece ya da üzerindeyse randevu gününü beklemeden hemen başvururum."}, {"id": "qz-5", "metin": "Bu cümle doğru mu, yanlış mı? Ağzımda yara varken limon ve turşu yiyebilirim."}, {"id": "qz-1-cevap", "metin": "Bu cümle doğru. Bu suyla yemeklerden sonra ve yatmadan önce ağzınızı bolca çalkalayın."}, {"id": "qz-2-cevap", "metin": "Bu cümle yanlış. Alkollü ve gliserinli hazır gargaralar kullanılmaz."}, {"id": "qz-3-cevap", "metin": "Bu cümle yanlış. Aspirin türü ağrı kesiciler kanama riskini artırır. Her ağrı kesiciyi ekibinize danışarak kullanın."}, {"id": "qz-4-cevap", "metin": "Bu cümle doğru. Bu, hemen başvurmanız gereken bir durumdur. Acil bir durumda yüz on ikiyi arayın."}, {"id": "qz-5-cevap", "metin": "Bu cümle yanlış. Ağzınızda yara varken ekşi ve tuzlu yiyeceklerden kaçının."}, {"id": "acil", "metin": "Şimdi hemen başvurmanız gereken durumları anlatacağım. Ateşiniz otuz sekiz derece ya da üzerindeyse; herhangi bir yerinizde kanama ya da diş etlerinizde aşırı kanama varsa; yeni başlayan ya da artan bir nefes darlığınız varsa; ağız yaralarınız yemek yemenizi engelliyorsa ya da yutmakta zorlanıyorsanız; ağzınızdaki, dudaklarınızdaki ya da boğazınızdaki ağrı yemenizi, içmenizi ya da uyumanızı zorlaştırıyorsa, randevu gününü beklemeden hemen başvurun. Acil bir durumda yüz on ikiyi arayın. Ağzınızda beyaz lekeler, pamukçuk ya da yeni bir yara, ağrı veya hassasiyet fark ederseniz, bunu da ekibinize söyleyin."}]}</script>
 </div>
 
 <script>
@@ -1009,29 +1011,43 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
   sizeBtn.addEventListener('click', function () { db.lg = !db.lg; save(); applySize(); });
   applySize();
 
-  /* ===== Sesli dinle ===== */
+  /* ===== Sesli rehber =====
+     "Sesli dinle"ye basınca rehber modu açılır: ekran, soru veya adım değiştikçe anlatım kendiliğinden sürer.
+     ses/liste.json içinde hazır ses dosyası varsa o çalınır; yoksa aynı metni telefonun en iyi Türkçe sesi okur. */
   var synth = window.speechSynthesis || null;
-  var trVoice = null;
-  var SP = { chunks: [], i: 0, run: 0, btn: null };
-  var sbar = $('#sbar');
+  var NARR = {};
+  try { (JSON.parse($('#anlatim').textContent).klipler || []).forEach(function (c) { NARR[c.id] = c.metin; }); } catch (e) {}
+  var AUD = {};
+  try {
+    if (/^https?:$/.test(location.protocol)) {
+      fetch('ses/liste.json', { cache: 'no-cache' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) { if (j && j.klipler) AUD = j.klipler; })
+        .catch(function () {});
+    }
+  } catch (e) {}
+  var bestVoice = null;
+  function scoreVoice(v) {
+    var n = (v.name || '') + ' ' + (v.voiceURI || ''), s = 0;
+    if (/natural|neural|premium|enhanced|geli[sş]mi[sş]|wavenet|studio/i.test(n)) s += 4;
+    if (/google/i.test(n)) s += 3;
+    if (v.localService === false) s += (navigator.onLine === false ? -6 : 1);
+    return s;
+  }
   function pickVoice() {
     if (!synth) return 0;
-    var vs = synth.getVoices() || [];
-    trVoice = null;
-    for (var i = 0; i < vs.length; i++) {
-      if (/^tr([-_]|$)/i.test(vs[i].lang) && (!trVoice || vs[i].localService)) trVoice = vs[i];
-    }
+    var vs = synth.getVoices() || [], best = -99;
+    bestVoice = null;
+    vs.forEach(function (v) { if (!/^tr([-_]|$)/i.test(v.lang)) return; var s = scoreVoice(v); if (s > best) { best = s; bestVoice = v; } });
     return vs.length;
   }
   if (synth) { pickVoice(); try { synth.addEventListener('voiceschanged', pickVoice); } catch (e) { synth.onvoiceschanged = pickVoice; } }
   function rate() { var r = parseFloat(db.rate); return r >= 0.5 && r <= 2 ? r : 1; }
-  function paintRate() { $$('[data-rate]', sbar).forEach(function (b) { b.setAttribute('aria-pressed', parseFloat(b.getAttribute('data-rate')) === rate() ? 'true' : 'false'); }); }
-  paintRate();
 
   function forSpeech(t) {
     return t.replace(/°\s?C/g, ' derece')
       .replace(/(\d+)\s*[-–]\s*(\d+)/g, '$1 ile $2')
-      .replace(/\b112\b/g, 'bir bir iki')
+      .replace(/\b112\b/g, 'yüz on iki')
       .replace(/1\/4/g, 'çeyrek')
       .replace(/\s+/g, ' ').trim();
   }
@@ -1058,57 +1074,147 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     if (cur) out.push(cur);
     return out;
   }
-  function setSpeakBtn(btn, on) {
-    if (!btn) return;
-    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    btn.querySelector('.lbl').textContent = on ? 'Durdur' : 'Sesli dinle';
-    btn.querySelector('use').setAttribute('href', on ? '#i-stop' : '#i-speaker');
+
+  var SP = { mode: false, playing: false, run: 0, q: [], qi: 0 };
+  var sbar = $('#sbar');
+  var audioEl = typeof Audio !== 'undefined' ? new Audio() : null;
+  var blobs = {};
+  function silentWav() {
+    var n = 2400, b = new ArrayBuffer(44 + n * 2), v = new DataView(b), w = function (o, s) { for (var k = 0; k < s.length; k++) v.setUint8(o + k, s.charCodeAt(k)); };
+    w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+    v.setUint32(24, 24000, true); v.setUint32(28, 48000, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+    return URL.createObjectURL(new Blob([b], { type: 'audio/wav' }));
   }
-  function showBar(on) { sbar.hidden = !on; document.body.classList.toggle('reading', on); }
-  function endSpeech() { setSpeakBtn(SP.btn, false); SP.btn = null; showBar(false); }
-  function speakFrom(i) {
-    var run = SP.run;
-    if (i >= SP.chunks.length) { endSpeech(); return; }
-    SP.i = i;
-    var u = new SpeechSynthesisUtterance(SP.chunks[i]), started = false;
-    u.lang = 'tr-TR'; if (trVoice) u.voice = trVoice; u.rate = rate();
-    u.onstart = function () { started = true; };
-    u.onend = function () { started = true; if (run === SP.run) speakFrom(i + 1); };
-    u.onerror = function (e) {
-      if (run !== SP.run || (e && (e.error === 'interrupted' || e.error === 'canceled'))) return;
-      endSpeech();
-      toast('Sesli okuma başlatılamadı. Telefonunuzda Türkçe okuma sesi yüklü olmayabilir; telefon ayarlarından ekleyebilirsiniz.');
-    };
-    synth.speak(u);
-    /* Bazı tarayıcılar iptalden hemen sonraki ilk okumayı yutar: başlamadıysa bir kez daha dene. */
-    setTimeout(function () { if (run === SP.run && !started && !synth.speaking && !synth.pending) synth.speak(u); }, 600);
+  /* iPhone'da ses yalnızca dokunuşla açılabilir: ilk dokunuşta sessiz bir ses çalarak oynatıcıyı aç. */
+  function unlockAudio() {
+    if (!audioEl || audioEl._ok) return;
+    try { audioEl.src = silentWav(); var p = audioEl.play(); audioEl._ok = true; if (p && p.catch) p.catch(function () {}); } catch (e) {}
   }
-  function stopSpeech() {
-    SP.run++;
+  function getAudio(url) {
+    if (blobs[url]) return Promise.resolve(blobs[url]);
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error('ses yok'); return r.blob(); })
+      .then(function (b) { var u = URL.createObjectURL(b); blobs[url] = u; return u; });
+  }
+  function paintRate() { $$('[data-rate]', sbar).forEach(function (b) { b.setAttribute('aria-pressed', parseFloat(b.getAttribute('data-rate')) === rate() ? 'true' : 'false'); }); }
+  function paint() {
+    $$('[data-speak]').forEach(function (b) {
+      var lbl = SP.mode ? (SP.playing ? 'Durdur' : 'Tekrar dinle') : 'Sesli dinle';
+      b.setAttribute('aria-pressed', SP.mode && SP.playing ? 'true' : 'false');
+      b.querySelector('.lbl').textContent = lbl;
+      b.querySelector('use').setAttribute('href', SP.mode && SP.playing ? '#i-stop' : '#i-speaker');
+    });
+    sbar.hidden = !SP.mode;
+    document.body.classList.toggle('reading', SP.mode);
+    $('#sbLabel').textContent = SP.playing ? 'Okunuyor' : 'Sesli rehber açık';
+    $('#sbDot').classList.toggle('on', SP.playing);
+  }
+  paintRate();
+  function hush() {
+    SP.run++; SP.playing = false;
     if (synth) { try { synth.cancel(); } catch (e) {} }
-    endSpeech();
+    if (audioEl) { try { audioEl.pause(); } catch (e) {} }
+    paint();
   }
-  function startSpeech(text, btn) {
-    stopSpeech();
-    SP.chunks = chunk(text);
-    if (!SP.chunks.length) return;
-    SP.btn = btn; setSpeakBtn(btn, true); showBar(true);
-    speakFrom(0);
+  function stopSpeech() { SP.mode = false; hush(); }
+  function playQueue(q) {
+    hush();
+    if (!q || !q.length) return;
+    SP.q = q; SP.playing = true; paint();
+    step(0, SP.run);
   }
+  function step(i, run) {
+    if (run !== SP.run) return;
+    if (i >= SP.q.length) { SP.playing = false; paint(); return; }
+    SP.qi = i;
+    var item = SP.q[i];
+    if (item.onstart) item.onstart();
+    var done = function () { step(i + 1, run); };
+    var url = item.id && AUD[item.id];
+    if (url && audioEl) {
+      var fallback = function () { if (run === SP.run) speakTTS(item, run, done); };
+      getAudio(url).then(function (src) {
+        if (run !== SP.run) return;
+        audioEl.onended = function () { if (run === SP.run) done(); };
+        audioEl.onerror = fallback;
+        audioEl.src = src;
+        audioEl.playbackRate = rate();
+        try { audioEl.preservesPitch = true; } catch (e) {}
+        var p = audioEl.play(); if (p && p.catch) p.catch(fallback);
+      }).catch(fallback);
+    } else speakTTS(item, run, done);
+  }
+  function speakTTS(item, run, done) {
+    var text = item.text || NARR[item.id] || '';
+    if (!text) { done(); return; }
+    if (!synth || !window.SpeechSynthesisUtterance) { toast('Bu tarayıcı sesli okumayı desteklemiyor. Chrome veya Safari ile açmayı deneyin.'); stopSpeech(); return; }
+    var parts = chunk(text);
+    (function say(j) {
+      if (run !== SP.run) return;
+      if (j >= parts.length) { done(); return; }
+      var u = new SpeechSynthesisUtterance(parts[j]), started = false;
+      u.lang = 'tr-TR'; if (bestVoice) u.voice = bestVoice; u.rate = rate();
+      u.onstart = function () { started = true; };
+      u.onend = function () { started = true; if (run === SP.run) say(j + 1); };
+      u.onerror = function (e) {
+        if (run !== SP.run || (e && (e.error === 'interrupted' || e.error === 'canceled'))) return;
+        stopSpeech();
+        toast('Sesli okuma başlatılamadı. Telefonunuzda Türkçe okuma sesi yüklü olmayabilir; telefon ayarlarından ekleyebilirsiniz.');
+      };
+      synth.speak(u);
+      /* Bazı tarayıcılar iptalden hemen sonraki ilk okumayı yutar: başlamadıysa bir kez daha dene. */
+      setTimeout(function () { if (run === SP.run && !started && !synth.speaking && !synth.pending) synth.speak(u); }, 600);
+    })(0);
+  }
+  var PAGERS = {};
+  function guided(name, notes) {
+    var pg = PAGERS[name], q = [];
+    if (!pg) return q;
+    for (var k = pg.at(); k < pg.n; k++) (function (k) { q.push({ id: name + '-' + (k + 1), onstart: function () { pg.go(k); } }); })(k);
+    q.push({ id: notes });
+    return q;
+  }
+  /* Bu ekranda şu an ne anlatılmalı? explicit: kişi "Sesli dinle"ye bastı. */
+  function queueFor(explicit) {
+    var scr = $('#s-' + current);
+    switch (current) {
+      case 'ana': return [{ id: 'ana' }];
+      case 'kontrol':
+        if (!$('#chkR').hidden) { var q = [{ id: 'sonuc-' + lastLevel }]; if (ans.fever === 'unknown') q.push({ id: 'sonuc-ates' }); return q; }
+        return [{ id: 'kontrol-' + (qi + 1) }];
+      case 'fircalama': return guided('fircalama', 'fircalama-notlar');
+      case 'gargara': return guided('gargara', 'gargara-notlar');
+      case 'yiyecek':
+        if (!$('#gEnd').hidden) return [{ id: 'yiyecek-son' }];
+        if (G.done) return [{ id: G.lastRight ? 'dogru' : 'tekrar' }, { id: 'y-' + G.deck[G.i].id }];
+        return explicit || G.i === 0 ? [{ id: 'yiyecek-giris' }] : [];
+      case 'takip': return [{ id: 'takip' }];
+      case 'test':
+        if (!$('#tbMenu').hidden) return [{ id: 'test-giris' }];
+        if (!$('#tbRun').hidden) return [{ id: 'tb-' + (tb.i + 1) }];
+        if (!$('#qzRun').hidden) return qz.done ? [{ id: qz.lastRight ? 'dogru' : 'tekrar' }, { id: 'qz-' + (qz.i + 1) + '-cevap' }] : [{ id: 'qz-' + (qz.i + 1) }];
+        return [{ text: readableText(scr) }];
+      case 'acil': return [{ id: 'acil' }];
+      default: return [{ text: readableText(scr) }];
+    }
+  }
+  function narrate() { if (SP.mode) playQueue(queueFor(false)); }
+  function cue(id) { if (SP.mode) playQueue([{ id: id }]); }
   document.addEventListener('click', function (e) {
     var b = e.target.closest('[data-speak]');
     if (!b) return;
-    if (SP.btn === b) { stopSpeech(); return; }
-    if (!synth || !window.SpeechSynthesisUtterance) { toast('Bu tarayıcı sesli okumayı desteklemiyor. Chrome veya Safari ile açmayı deneyin.'); return; }
-    var n = pickVoice();
-    if (n > 0 && !trVoice) toast('Telefonunuzda Türkçe okuma sesi bulunamadı. Telefon ayarlarından Türkçe metin okuma sesini ekleyebilirsiniz.');
-    startSpeech(readableText(b.closest('.screen')), b);
+    if (SP.mode && SP.playing) { stopSpeech(); return; }
+    unlockAudio();
+    if (!Object.keys(AUD).length && synth) { var n = pickVoice(); if (n > 0 && !bestVoice) toast('Telefonunuzda Türkçe okuma sesi bulunamadı. Telefon ayarlarından Türkçe metin okuma sesini ekleyebilirsiniz.'); }
+    SP.mode = true;
+    playQueue(queueFor(true));
   });
   $('#sbStop').addEventListener('click', stopSpeech);
   $$('[data-rate]', sbar).forEach(function (b) {
     b.addEventListener('click', function () {
       db.rate = parseFloat(b.getAttribute('data-rate')); save(); paintRate();
-      if (SP.btn) { var i = SP.i; SP.run++; try { synth.cancel(); } catch (e) {} speakFrom(i); }
+      if (!SP.playing) return;
+      if (audioEl && !audioEl.paused) { audioEl.playbackRate = rate(); return; }
+      var i = SP.qi; SP.run++; try { synth.cancel(); } catch (e) {} step(i, SP.run);
     });
   });
 
@@ -1118,7 +1224,7 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
   function routeFromHash() { var h = (location.hash || '').replace('#', ''); return ROUTES.indexOf(h) >= 0 ? h : null; }
   function render(r, focus) {
     if (r === current) return;
-    stopSpeech();
+    hush();
     toastEl.hidden = true;
     current = r;
     ROUTES.forEach(function (id) { $('#s-' + id).hidden = id !== r; });
@@ -1130,6 +1236,7 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     if (r === 'test') showTbMenu();
     window.scrollTo(0, 0);
     if (focus) { var h = $('#s-' + r + ' h1'); if (h) { try { h.focus({ preventScroll: true }); } catch (e) { h.focus(); } } }
+    narrate();
   }
   window.addEventListener('hashchange', function () { var r = routeFromHash(); if (r) render(r, true); });
   document.addEventListener('click', function (e) {
@@ -1152,6 +1259,7 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
 
   /* ===== Adım adım anlatım ===== */
   $$('[data-pager]').forEach(function (pg) {
+    var name = pg.closest('.screen').id.replace('s-', '');
     var steps = $$('.step', pg), i = 0, dots = $('.dots', pg);
     dots.innerHTML = steps.map(function () { return '<i></i>'; }).join('');
     var prev = $('[data-prev]', pg), next = $('[data-next]', pg);
@@ -1160,8 +1268,9 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
       $$('i', dots).forEach(function (d, k) { d.className = k === i ? 'on' : ''; });
       prev.disabled = i === 0; next.disabled = i === steps.length - 1;
     }
-    prev.addEventListener('click', function () { if (i > 0) { i--; stopSpeech(); show(); } });
-    next.addEventListener('click', function () { if (i < steps.length - 1) { i++; stopSpeech(); show(); } });
+    prev.addEventListener('click', function () { if (i > 0) { i--; hush(); show(); narrate(); } });
+    next.addEventListener('click', function () { if (i < steps.length - 1) { i++; hush(); show(); narrate(); } });
+    PAGERS[name] = { n: steps.length, at: function () { return i; }, go: function (k) { if (k !== i) { i = k; show(); } } };
     show();
   });
 
@@ -1204,15 +1313,15 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
   }
   $('#chkOpts').addEventListener('click', function (e) {
     var b = e.target.closest('.opt'); if (!b) return;
-    stopSpeech();
+    hush();
     ans[QS[qi].id] = b.getAttribute('data-v');
     $$('.opt', this).forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
     setTimeout(function () {
-      if (qi < QS.length - 1) { qi++; renderQ(); var h = $('#chkText'); h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); window.scrollTo(0, 0); }
+      if (qi < QS.length - 1) { qi++; renderQ(); var h = $('#chkText'); h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); window.scrollTo(0, 0); narrate(); }
       else showResult();
     }, 220);
   });
-  $('#chkBack').addEventListener('click', function () { if (qi > 0) { stopSpeech(); qi--; renderQ(); } });
+  $('#chkBack').addEventListener('click', function () { if (qi > 0) { hush(); qi--; renderQ(); narrate(); } });
 
   function gradeOf(a) {
     if (a.food === 'none') return 4;
@@ -1221,9 +1330,11 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     if (a.lesion === 'red' || a.pain === 'yes') return 1;
     return 0;
   }
+  var lastLevel = 'ok';
   function showResult() {
     var g = gradeOf(ans);
     var level = (ans.fever === 'yes' || g >= 3) ? 'danger' : (g >= 1 ? 'warn' : 'ok');
+    lastLevel = level;
     var html = '';
     if (level === 'ok') {
       html += '<div class="result ok"><div class="rh"><span class="ri">' + icon('i-check') + '</span><h2>Bugün ağzınızda bir değişiklik görünmüyor</h2></div>' +
@@ -1256,7 +1367,8 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     $('#chkQ').hidden = true;
     var r = $('#chkR'); r.innerHTML = html; r.hidden = false;
     window.scrollTo(0, 0);
-    $('#chkAgain').addEventListener('click', function () { stopSpeech(); ans = {}; qi = 0; renderQ(); $('#chkR').hidden = true; $('#chkQ').hidden = false; });
+    $('#chkAgain').addEventListener('click', function () { hush(); ans = {}; qi = 0; renderQ(); $('#chkR').hidden = true; $('#chkQ').hidden = false; narrate(); });
+    narrate();
   }
   renderQ();
 
@@ -1285,14 +1397,14 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
   }
   function tTick() {
     T.left = (T.end - Date.now()) / 1000;
-    if (!T.half && T.left <= T.total / 2) { T.half = true; tLive.textContent = 'Yarısı tamamlandı.'; }
-    if (T.left <= 0) { T.left = 0; tPause(); tDraw(); chime(); tLive.textContent = 'Süre tamamlandı.'; $('#tDone').hidden = false; return; }
+    if (!T.half && T.left <= T.total / 2) { T.half = true; tLive.textContent = 'Yarısı tamamlandı.'; cue('sayac-yari'); }
+    if (T.left <= 0) { T.left = 0; tPause(); tDraw(); chime(); tLive.textContent = 'Süre tamamlandı.'; $('#tDone').hidden = false; setTimeout(function () { cue('sayac-bitti'); }, 900); return; }
     tDraw();
   }
   function tStart() { if (T.left <= 0) { T.left = T.total; T.half = false; } audioUnlock(); T.run = true; T.end = Date.now() + T.left * 1000; clearInterval(T.iv); T.iv = setInterval(tTick, 200); $('#tDone').hidden = true; lockOn(); tLabel(); }
   function tPause() { T.run = false; clearInterval(T.iv); lockOff(); tLabel(); }
   function tReset() { tPause(); T.total = 120; T.left = 120; T.half = false; $('#tDone').hidden = true; tLive.textContent = ''; tDraw(); tLabel(); }
-  tStartBtn.addEventListener('click', function () { if (T.run) tPause(); else tStart(); });
+  tStartBtn.addEventListener('click', function () { if (T.run) tPause(); else { var fresh = T.left >= T.total; tStart(); if (fresh) cue('sayac-basla'); } });
   $('#tReset').addEventListener('click', tReset);
   $('#tPlus').addEventListener('click', function () { T.total = 60; T.left = 60; T.half = true; tDraw(); tStart(); });
   document.addEventListener('visibilitychange', function () { if (!document.hidden && T.run) lockOn(); });
@@ -1357,12 +1469,14 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     $('#gBar').style.width = ((G.i + 1) / G.deck.length * 100) + '%';
     $('#gCard').innerHTML = figSvg(f.id) + '<p class="name say">' + esc(f.name) + '</p>';
     $('#gBtns').hidden = false; $('#gFb').hidden = true; $('#gNext').hidden = true; G.done = false;
+    narrate();
   }
   $('#gBtns').addEventListener('click', function (e) {
     var b = e.target.closest('[data-ans]'); if (!b || G.done) return;
-    stopSpeech();
+    hush();
     G.done = true;
     var f = G.deck[G.i], pick = b.getAttribute('data-ans') === '1', right = pick === f.ok;
+    G.lastRight = right;
     if (right) G.score++;
     var fb = $('#gFb');
     fb.className = 'fb ' + (right ? 'good' : 'bad');
@@ -1373,8 +1487,9 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     var nx = $('#gNext'); nx.hidden = false;
     nx.innerHTML = (G.i < G.deck.length - 1 ? 'Sonraki kart' : 'Sonucu gör') + icon('i-chev-r');
     nx.focus({ preventScroll: true });
+    narrate();
   });
-  $('#gNext').addEventListener('click', function () { stopSpeech(); if (G.i < G.deck.length - 1) { G.i++; gShow(); window.scrollTo(0, 0); } else gEnd(); });
+  $('#gNext').addEventListener('click', function () { hush(); if (G.i < G.deck.length - 1) { G.i++; gShow(); window.scrollTo(0, 0); } else gEnd(); });
   function gEnd() {
     var yes = FOODS.filter(function (f) { return f.ok; }), no = FOODS.filter(function (f) { return !f.ok; });
     function li(f) { return '<li>' + figSvg(f.id) + '<span>' + esc(f.name) + '</span></li>'; }
@@ -1390,7 +1505,8 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
       '</ul><p class="src">Kaynak: K1, K4</p></div>' +
       '<div class="row2"><button class="btn btn-primary" type="button" id="gAgain">' + icon('i-reset') + 'Yeniden oyna</button><a class="btn btn-ghost" href="#ana">' + icon('i-home') + 'Ana sayfa</a></div>';
     $('#gPlay').hidden = true; e.hidden = false; window.scrollTo(0, 0);
-    $('#gAgain').addEventListener('click', function () { stopSpeech(); gNew(); window.scrollTo(0, 0); });
+    $('#gAgain').addEventListener('click', function () { hush(); gNew(); window.scrollTo(0, 0); });
+    narrate();
   }
   gNew();
 
@@ -1466,11 +1582,12 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     $('#tbQ').textContent = q.q;
     $('#tbKeys').innerHTML = q.keys.map(function (k) { return '<li>' + esc(k) + '</li>'; }).join('');
     $('details.keys').open = false;
+    narrate();
   }
-  $('#tbStart').addEventListener('click', function () { stopSpeech(); tb = { i: 0, res: [] }; showOnly('tbRun'); tbShow(); });
+  $('#tbStart').addEventListener('click', function () { hush(); tb = { i: 0, res: [] }; showOnly('tbRun'); tbShow(); });
   $('#tbRun').addEventListener('click', function (e) {
     var b = e.target.closest('[data-tb]'); if (!b) return;
-    stopSpeech();
+    hush();
     tb.res[tb.i] = b.getAttribute('data-tb');
     if (tb.i < TB.length - 1) { tb.i++; tbShow(); window.scrollTo(0, 0); return; }
     var d = new Date();
@@ -1483,7 +1600,8 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
       '<div class="card" data-nosay><h3>Hemşire değerlendirmesi: ' + esc(db.tb.date) + '</h3>' + sumTable(db.tb) + '<p class="muted small">Bu özet yalnızca bu telefonda saklanır.</p></div>' +
       '<div class="row2"><button class="btn btn-ghost" type="button" id="tbMenuBtn">' + icon('i-chev-l') + 'Geri</button><a class="btn btn-primary" href="#ana">' + icon('i-home') + 'Ana sayfa</a></div>';
     showOnly('tbEnd');
-    $('#tbMenuBtn').addEventListener('click', function () { stopSpeech(); showTbMenu(); });
+    $('#tbMenuBtn').addEventListener('click', function () { hush(); showTbMenu(); narrate(); });
+    narrate();
   });
 
   var QZ = [
@@ -1499,12 +1617,14 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     $('#qzBar').style.width = ((qz.i + 1) / QZ.length * 100) + '%';
     $('#qzS').textContent = QZ[qz.i].s;
     $('#qzBtns').hidden = false; $('#qzFb').hidden = true; $('#qzNext').hidden = true; qz.done = false;
+    narrate();
   }
-  $('#qzStart').addEventListener('click', function () { stopSpeech(); qz = { i: 0, score: 0, done: false }; showOnly('qzRun'); qzShow(); });
+  $('#qzStart').addEventListener('click', function () { hush(); qz = { i: 0, score: 0, done: false }; showOnly('qzRun'); qzShow(); });
   $('#qzBtns').addEventListener('click', function (e) {
     var b = e.target.closest('[data-qz]'); if (!b || qz.done) return;
-    stopSpeech(); qz.done = true;
+    hush(); qz.done = true;
     var q = QZ[qz.i], right = (b.getAttribute('data-qz') === '1') === q.a;
+    qz.lastRight = right;
     if (right) qz.score++;
     var fb = $('#qzFb');
     fb.className = 'fb ' + (right ? 'good' : 'bad');
@@ -1514,15 +1634,17 @@ body.reading .toast{bottom:calc(9.5rem + env(safe-area-inset-bottom,0px))}
     var nx = $('#qzNext'); nx.hidden = false;
     nx.innerHTML = (qz.i < QZ.length - 1 ? 'Sonraki soru' : 'Sonucu gör') + icon('i-chev-r');
     nx.focus({ preventScroll: true });
+    narrate();
   });
   $('#qzNext').addEventListener('click', function () {
-    stopSpeech();
+    hush();
     if (qz.i < QZ.length - 1) { qz.i++; qzShow(); window.scrollTo(0, 0); return; }
     $('#qzEnd').innerHTML = '<div class="result ' + (qz.score === QZ.length ? 'ok' : 'warn') + '"><div class="rh"><span class="ri">' + icon(qz.score === QZ.length ? 'i-check' : 'i-info') + '</span><h2>' + QZ.length + ' sorunun ' + qz.score + ' tanesini doğru bildiniz</h2></div>' +
       '<p>' + (qz.score === QZ.length ? 'Tebrikler.' : 'Emin olmadığınız konuları hemşirenize sorun.') + '</p></div>' +
       '<div class="row2"><button class="btn btn-ghost" type="button" id="qzMenuBtn">' + icon('i-chev-l') + 'Geri</button><a class="btn btn-primary" href="#ana">' + icon('i-home') + 'Ana sayfa</a></div>';
     showOnly('qzEnd');
-    $('#qzMenuBtn').addEventListener('click', function () { stopSpeech(); showTbMenu(); });
+    $('#qzMenuBtn').addEventListener('click', function () { hush(); showTbMenu(); narrate(); });
+    narrate();
   });
 
   /* ===== Başlangıç ===== */

@@ -1,0 +1,278 @@
+{
+ "ses": "Sulafat",
+ "uslup": "Read the following Turkish text aloud in natural Turkish. Use a warm, calm and reassuring voice, like a caring nurse gently explaining something to an elderly patient at the bedside. Speak clearly, at a natural and comfortable pace, with short natural pauses between sentences. Do not read this instruction aloud. Text:",
+ "klipler": [
+  {
+   "id": "ana",
+   "metin": "Merhaba. Kemoterapi sırasında ağızda yaralar görülebilir. Buna mukozit, yani ağız içinin iltihaplanması ve yara oluşması denir. Bu etkiler genellikle geçicidir. Enfeksiyon yoksa çoğunlukla iki ile dört hafta içinde kendiliğinden iyileşir. Düzenli ağız bakımı, yaraları önlemeye yardımcı olur. Bu rehberde ağız bakımınızı birlikte, adım adım yapacağız. Her gün önce Bugün ağzım nasıl bölümünden ağzınızı kontrol edin. Sonra diş fırçalama ve gargara bölümlerine geçebilirsiniz. Şunları da unutmayın: Alkollü ya da gliserinli hazır gargara kullanmayın. Sigara ve alkolden uzak durun. Aspirin türü ağrı kesiciler kanama riskini artırır, bu yüzden kemoterapi sırasında kullanılmaz. Her ilacı, bitki çayını, vitamini ve takviyeyi kullanmadan önce doktorunuza ya da hemşirenize danışın. Kalp ilacı gibi düzenli kullandığınız bir ilacı da bırakmadan önce sorun."
+  },
+  {
+   "id": "kontrol-1",
+   "metin": "Şimdi ağzınızı birlikte kontrol edelim. Size dört kısa soru soracağım. Cevabınıza dokunmanız yeterli. İlk soru: Ağzınızda ağrı ya da hassasiyet var mı? Yoksa Yok düğmesine, varsa Var düğmesine dokunun."
+  },
+  {
+   "id": "kontrol-2",
+   "metin": "İkinci soru: Ağzınızın içine bakın. Kızarıklık ya da yara var mı? Hiçbiri yoksa Yok düğmesine, kızarıklık varsa Kızarıklık var düğmesine, yara varsa Yara var düğmesine dokunun."
+  },
+  {
+   "id": "kontrol-3",
+   "metin": "Üçüncü soru: Bugün ne yiyip içebiliyorsunuz? Katı yiyecekleri yiyebiliyor musunuz, yalnızca sıvı mı alabiliyorsunuz, yoksa hiçbir şey yiyip içemiyor musunuz? Size uyan seçeneğe dokunun."
+  },
+  {
+   "id": "kontrol-4",
+   "metin": "Son soru: Ateşiniz otuz sekiz derece ya da üzerinde mi? Ateşinizi ölçmediyseniz Ölçmedim düğmesine dokunun."
+  },
+  {
+   "id": "sonuc-ok",
+   "metin": "Bugün ağzınızda bir değişiklik görünmüyor. Ağız bakımınıza böyle devam edin. Ağzınızı her gün, yara ya da beyaz leke yönünden kontrol edin. Unutmayın, bu sonuç bir tanı değildir."
+  },
+  {
+   "id": "sonuc-warn",
+   "metin": "Ağzınızda bir değişiklik var. Ağrı, hassasiyet ya da yara gibi bir değişiklik fark ettiğinizde, bunu hemen doktorunuza ya da hemşirenize söyleyin. Bu arada ağız bakımınıza devam edin. Bu sonuç bir tanı değildir."
+  },
+  {
+   "id": "sonuc-danger",
+   "metin": "Lütfen randevu gününüzü beklemeyin, hemen bir sağlık kuruluşuna başvurun. Acil bir durumda yüz on ikiyi arayın. Bu sonuç bir tanı değildir. Sonucu sağlık ekibinizle paylaşın."
+  },
+  {
+   "id": "sonuc-ates",
+   "metin": "Bir de ateşinizi ölçün. Ateşiniz otuz sekiz derece ya da üzerindeyse, randevu gününü beklemeden hemen başvurun."
+  },
+  {
+   "id": "fircalama-1",
+   "metin": "Şimdi dişlerinizi nasıl fırçalayacağınızı adım adım anlatacağım. Önce ne zaman fırçalayacağınızı bilelim: Dişlerinizi her yemekten sonra ve yatmadan önce fırçalayın."
+  },
+  {
+   "id": "fircalama-2",
+   "metin": "Yumuşak, naylon kıllı bir diş fırçası kullanın. Bebek diş fırçası da olabilir."
+  },
+  {
+   "id": "fircalama-3",
+   "metin": "Her fırçalamadan önce fırçanızı sıcak suyla yıkayın. Böylece kıllar yumuşar."
+  },
+  {
+   "id": "fircalama-4",
+   "metin": "Naneli olmayan, hafif tatlı bir diş macunu seçin, örneğin çocuk diş macunu. Nane ağzınızı tahriş edebilir. Macun ağzınızı yakıyorsa, yaklaşık iki yüz kırk mililitre, yani bir bardak suya çeyrek çay kaşığı tuz karıştırın ve bu suyla fırçalayın."
+  },
+  {
+   "id": "fircalama-5",
+   "metin": "Şimdi dişlerinizi, diş etlerinizi ve dilinizi nazikçe fırçalayın. Özellikle dişin diş etiyle birleştiği yere özen gösterin."
+  },
+  {
+   "id": "fircalama-6",
+   "metin": "Her seferinde iki ile üç dakika fırçalayın. İsterseniz aşağıdaki sayacı başlatın. Süre dolunca size haber vereceğim."
+  },
+  {
+   "id": "fircalama-7",
+   "metin": "Fırçaladıktan sonra fırçanızı havada kurumaya bırakın ve fırçanızı sık sık yenileyin. Fırçalama adımlarını tamamladınız."
+  },
+  {
+   "id": "fircalama-notlar",
+   "metin": "Birkaç önemli not daha var. Ağzınızda yara ve ağrı çoksa diş fırçası kullanmayın. Steril, yani mikropsuz bir gazlı bezi parmağınıza sarın ve macunla dişlerinizi hırpalamadan ovun. Bu durumu ekibinize de haber verin. Diş ipi için: Trombosit, kanın pıhtılaşmasını sağlayan hücredir. Trombosit sayınız yeterliyse, yatmadan önce diş aralarınızı diş ipiyle nazikçe temizleyin. Kanama riskiniz olup olmadığını ekibinize sorun. Takma dişiniz varsa, ağzınıza iyi oturduğundan emin olun. Her yemekten sonra çıkarın ve ağzınızı çalkalayın. Takma dişinizi her gün yumuşak bir fırçayla temizleyin. Sıcak su kullanmayın, şekli bozulabilir. Geceleri, suyunu her gün değiştirdiğiniz kapaklı bir kapta saklayın. Ağzınızda yara ve şikâyet fazlaysa, takma dişinizi iyileşene kadar takmayın."
+  },
+  {
+   "id": "sayac-basla",
+   "metin": "Fırçalamaya başlayabilirsiniz. Süreyi ben tutuyorum."
+  },
+  {
+   "id": "sayac-yari",
+   "metin": "Yarısı tamam. Nazikçe fırçalamaya devam edin."
+  },
+  {
+   "id": "sayac-bitti",
+   "metin": "Süre doldu. Dişlerinizi fırçaladınız, elinize sağlık."
+  },
+  {
+   "id": "gargara-1",
+   "metin": "Karbonatlı su, ağızdaki asidi azaltır. Kuruluğu ve yaraları engellemeye yardımcı olur. Şimdi gargara suyunu birlikte hazırlayalım. Önce bir su bardağı su alın."
+  },
+  {
+   "id": "gargara-2",
+   "metin": "Suyun içine bir çay kaşığı karbonat koyun ve karıştırın."
+  },
+  {
+   "id": "gargara-3",
+   "metin": "Bu suyla ağzınızı bolca çalkalayın."
+  },
+  {
+   "id": "gargara-4",
+   "metin": "Bunu yemeklerden sonra ve yatmadan önce yapın."
+  },
+  {
+   "id": "gargara-5",
+   "metin": "Ağzınızdaki şikâyetler fazlaysa ve beslenemiyorsanız, ağzınızı iki saatte bir karbonatlı suyla çalkalayın. Doktorunuzun önerdiği gargara ilaçlarını kullanın. Ateşiniz otuz sekiz derece ya da üzerindeyse, randevu gününü beklemeden hemen başvurun."
+  },
+  {
+   "id": "gargara-notlar",
+   "metin": "Son olarak, alkollü ve gliserinli hazır gargaraları kullanmayın. Ekibiniz size başka bir gargara önerdiyse onu kullanın. Hemşirenizden size uygun tarifi yazmasını isteyebilirsiniz."
+  },
+  {
+   "id": "yiyecek-giris",
+   "metin": "Şimdi küçük bir oyun oynayalım. Ekranda bir yiyecek göreceksiniz. Ağzınızda yara ya da hassasiyet varken bu yiyecek uygunsa yeşil Uygun düğmesine, uygun değilse kırmızı Kaçının düğmesine dokunun."
+  },
+  {
+   "id": "dogru",
+   "metin": "Doğru bildiniz."
+  },
+  {
+   "id": "tekrar",
+   "metin": "Bir daha bakalım."
+  },
+  {
+   "id": "y-pure",
+   "metin": "Patates püresi uygundur. Yumuşaktır ve kolay yutulur."
+  },
+  {
+   "id": "y-sutlac",
+   "metin": "Sütlaç uygundur. Yumuşak bir tatlıdır ve kolay yutulur."
+  },
+  {
+   "id": "y-muhallebi",
+   "metin": "Muhallebi uygundur. Muhallebi ve puding gibi yumuşak tatlılar uygundur."
+  },
+  {
+   "id": "y-muz",
+   "metin": "Muz uygundur. Yumuşak bir meyvedir. Ekşi meyvelerin yerine seçilebilir."
+  },
+  {
+   "id": "y-yumurta",
+   "metin": "Yumuşak yumurta uygundur. Yumuşak kıvamda pişmiş yumurta yiyebilirsiniz."
+  },
+  {
+   "id": "y-patates",
+   "metin": "Haşlanmış patates uygundur. Yumuşaktır ve kolay yutulur."
+  },
+  {
+   "id": "y-makarna",
+   "metin": "Makarna uygundur. Yumuşak bir yiyecektir."
+  },
+  {
+   "id": "y-peynir",
+   "metin": "Yumuşak peynir uygundur. Ama tuzlu peynirden kaçının."
+  },
+  {
+   "id": "y-limon",
+   "metin": "Limondan kaçının. Limon ekşidir. Ağzınızda yara varken limon ve ekşi meyvelerden uzak durun."
+  },
+  {
+   "id": "y-portakal",
+   "metin": "Portakal suyundan kaçının. Ekşi meyve sularındandır."
+  },
+  {
+   "id": "y-domates",
+   "metin": "Domates suyundan kaçının. Ekşidir."
+  },
+  {
+   "id": "y-cips",
+   "metin": "Cipsten kaçının. Serttir, ağzınızın içini tahriş edebilir ve çizebilir."
+  },
+  {
+   "id": "y-kraker",
+   "metin": "Krakerden kaçının. Kuru ve serttir, ağzınızı tahriş edebilir."
+  },
+  {
+   "id": "y-tost",
+   "metin": "Kızarmış ekmek ve tosttan kaçının. Kuru ve serttir, ağzınızı tahriş edebilir."
+  },
+  {
+   "id": "y-biber",
+   "metin": "Acı biber ve baharatlı yemeklerden kaçının. Acı ve baharatlı yiyecekler ağzınızı tahriş eder."
+  },
+  {
+   "id": "y-tursu",
+   "metin": "Turşudan kaçının. Ekşi ve tuzludur."
+  },
+  {
+   "id": "y-cay",
+   "metin": "Çok sıcak çaydan kaçının. Çok sıcak yiyecek ve içecekler ağzınızı tahriş eder. Biraz soğumasını bekleyin."
+  },
+  {
+   "id": "y-havuc",
+   "metin": "Çiğ havuçtan kaçının. Çiğ sebzeler serttir."
+  },
+  {
+   "id": "y-greyfurt",
+   "metin": "Greyfurttan kaçının. Ekşidir. Ayrıca kemoterapi ilaçlarıyla etkileşir."
+  },
+  {
+   "id": "y-alkol",
+   "metin": "Alkollü içkiden kaçının. Alkolden uzak durun."
+  },
+  {
+   "id": "yiyecek-son",
+   "metin": "Oyunu bitirdiniz. Birkaç ipucu vereyim. Bol sıvı alın. Kuru yiyecekleri su ya da yağla yumuşatın. Yiyecekleri doğrayın, ezin ya da blenderden geçirin. Böylece ağzınızda daha kısa kalır. Kalorisi ve proteini yüksek yiyecekler seçin."
+  },
+  {
+   "id": "takip",
+   "metin": "Bu bölümde gün içinde yaptığınız bakımı işaretleyebilirsiniz. Sabah, öğle, akşam ve yatmadan önce dişlerinizi fırçaladıysanız ya da gargara yaptıysanız, ilgili kutuya dokunun. Alttaki tabloda bu haftaki bakımınızı görebilirsiniz. Bu kayıtlar yalnızca sizin telefonunuzda saklanır, hiçbir yere gönderilmez."
+  },
+  {
+   "id": "test-giris",
+   "metin": "Bu bölümde öğrendiklerinizi kendi cümlelerinizle anlatacaksınız. Hemşireniz size soru soracak, siz de bildiğiniz gibi anlatacaksınız. Eksik kalan bir yer olursa hemşireniz yeniden anlatacak. İsterseniz Kendi kendime dene bölümünde kısa bir doğru yanlış testi de çözebilirsiniz."
+  },
+  {
+   "id": "tb-1",
+   "metin": "Gargarayı nasıl hazırladığınızı ve ne zaman yaptığınızı bana anlatır mısınız?"
+  },
+  {
+   "id": "tb-2",
+   "metin": "Dişlerinizi nasıl fırçaladığınızı bana anlatır mısınız?"
+  },
+  {
+   "id": "tb-3",
+   "metin": "Ağzınızda yara varken hangi yiyeceklerden kaçınırsınız, neler yersiniz? Bana anlatır mısınız?"
+  },
+  {
+   "id": "tb-4",
+   "metin": "Hangi durumlarda randevu gününü beklemeden hemen başvurursunuz? Bana anlatır mısınız?"
+  },
+  {
+   "id": "tb-5",
+   "metin": "Ağrı kesici, bitki çayı ya da vitamin kullanmadan önce ne yaparsınız? Bana anlatır mısınız?"
+  },
+  {
+   "id": "qz-1",
+   "metin": "Bu cümle doğru mu, yanlış mı? Gargara için bir su bardağı suya bir çay kaşığı karbonat koyarım."
+  },
+  {
+   "id": "qz-2",
+   "metin": "Bu cümle doğru mu, yanlış mı? Alkollü hazır gargaralar ağız yaralarına iyi gelir."
+  },
+  {
+   "id": "qz-3",
+   "metin": "Bu cümle doğru mu, yanlış mı? Ağrım olursa kendi başıma aspirin alabilirim."
+  },
+  {
+   "id": "qz-4",
+   "metin": "Bu cümle doğru mu, yanlış mı? Ateşim otuz sekiz derece ya da üzerindeyse randevu gününü beklemeden hemen başvururum."
+  },
+  {
+   "id": "qz-5",
+   "metin": "Bu cümle doğru mu, yanlış mı? Ağzımda yara varken limon ve turşu yiyebilirim."
+  },
+  {
+   "id": "qz-1-cevap",
+   "metin": "Bu cümle doğru. Bu suyla yemeklerden sonra ve yatmadan önce ağzınızı bolca çalkalayın."
+  },
+  {
+   "id": "qz-2-cevap",
+   "metin": "Bu cümle yanlış. Alkollü ve gliserinli hazır gargaralar kullanılmaz."
+  },
+  {
+   "id": "qz-3-cevap",
+   "metin": "Bu cümle yanlış. Aspirin türü ağrı kesiciler kanama riskini artırır. Her ağrı kesiciyi ekibinize danışarak kullanın."
+  },
+  {
+   "id": "qz-4-cevap",
+   "metin": "Bu cümle doğru. Bu, hemen başvurmanız gereken bir durumdur. Acil bir durumda yüz on ikiyi arayın."
+  },
+  {
+   "id": "qz-5-cevap",
+   "metin": "Bu cümle yanlış. Ağzınızda yara varken ekşi ve tuzlu yiyeceklerden kaçının."
+  },
+  {
+   "id": "acil",
+   "metin": "Şimdi hemen başvurmanız gereken durumları anlatacağım. Ateşiniz otuz sekiz derece ya da üzerindeyse; herhangi bir yerinizde kanama ya da diş etlerinizde aşırı kanama varsa; yeni başlayan ya da artan bir nefes darlığınız varsa; ağız yaralarınız yemek yemenizi engelliyorsa ya da yutmakta zorlanıyorsanız; ağzınızdaki, dudaklarınızdaki ya da boğazınızdaki ağrı yemenizi, içmenizi ya da uyumanızı zorlaştırıyorsa, randevu gününü beklemeden hemen başvurun. Acil bir durumda yüz on ikiyi arayın. Ağzınızda beyaz lekeler, pamukçuk ya da yeni bir yara, ağrı veya hassasiyet fark ederseniz, bunu da ekibinize söyleyin."
+  }
+ ]
+}

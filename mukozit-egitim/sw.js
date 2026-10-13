@@ -1,8 +1,8 @@
 /* Kemoterapide Ağız Bakımı: internetsiz çalışma.
    Bu dosya index.html ile aynı klasörde ve HTTPS üzerinden sunulduğunda devreye girer.
    Uygulama bir kez açıldıktan sonra telefonda saklanır; internet yokken de açılır.
-   İçeriği güncellediğinizde aşağıdaki sürüm adını değiştirin (ör. v3). */
-var CACHE = 'agiz-bakimi-v2';
+   İçeriği güncellediğinizde aşağıdaki sürüm adını değiştirin (ör. v4). */
+var CACHE = 'agiz-bakimi-v3';
 var FILES = ['./', './index.html'];
 
 self.addEventListener('install', function (e) {

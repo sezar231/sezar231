@@ -1,14 +1,19 @@
 # Kemoterapide Ağız Bakımı
 
-Kemoterapi alan hastalar için Türkçe, telefona uygun, etkileşimli hasta eğitimi uygulaması. Konu: kemoterapiye bağlı oral mukozit (ağız içi dokunun iltihaplanması ve yara oluşması) ve ağız bakımı. Hemşirelik öğrencisi hasta eğitimi projesi.
+Kemoterapi alan hastalar için Türkçe, telefona uygun, etkileşimli hasta eğitimi uygulaması. Konu: kemoterapiye bağlı oral mukozit (ağız içi dokunun iltihaplanması ve yara oluşması) ve ağız bakımı.
+
+Afyonkarahisar Sağlık Bilimleri Üniversitesi, Sağlık Bilimleri Fakültesi, Hemşirelik Bölümü öğrenci projesidir. Üniversitenin resmî yayını değildir.
+
+**Uygulama adresi:** https://sezar231.github.io/agiz-bakimi/
 
 ## Dosyalar
 
 | Dosya | Ne işe yarar |
 |---|---|
-| `index.html` | Uygulamanın kendisi. Tek dosyadır, dış kaynak kullanmaz. |
-| `sw.js` | İsteğe bağlı. Kendi sunucunuzda uygulamanın internetsiz açılmasını sağlar. |
-| `qr-kart.html` | 85×55 mm QR kartı. Adres ve telefon yazılır, A4'e 10'lu basılır. |
+| `index.html` | Uygulamanın kendisi. Tek dosyadır, dış kaynak kullanmaz; yazı tipi ve çizimler dosyanın içindedir. |
+| `sw.js` | Uygulamanın bir kez açıldıktan sonra internetsiz de açılmasını sağlar. |
+| `qr-kart.html` | 85×55 mm QR kartı. Adres hazır yazılıdır; A4'e 10'lu basılır. |
+| `kart-baski.pdf` | Basılmaya hazır kartlar: 1. sayfa 10 ön yüz, 2. sayfa 10 arka yüz. |
 | `sunum-akisi.md` | Sınıfta 5 dakikalık canlı tanıtım için konuşma akışı. |
 | `kaynak-alintilari.md` | Uygulamadaki her bilginin dayandığı kaynak alıntıları (K1-K5). |
 
@@ -18,31 +23,28 @@ Kemoterapi alan hastalar için Türkçe, telefona uygun, etkileşimli hasta eği
 2. **Doğru diş fırçalama:** 7 animasyonlu adım ve 2 dakikalık sayaç. Gazlı bez, diş ipi ve takma diş notları da vardır.
 3. **Gargara tarifi:** 5 animasyonlu adım (1 su bardağı su + 1 çay kaşığı karbonat).
 4. **Bunu yiyebilir miyim?** 20 yiyecekten rastgele 12 kart. Her cevapta açıklama ve kaynak gösterilir.
-5. **Günlük takip:** Sabah, öğle, akşam ve yatmadan önce için fırçalama ve gargara işaretleri. Haftalık tablo. Veriler yalnızca telefonda saklanır.
+5. **Günlük takip:** Sabah, öğle, akşam ve yatmadan önce için fırçalama ve gargara işaretleri, haftalık tablo. Veriler yalnızca telefonda saklanır.
 6. **Öğrendiklerimi anlatayım:** Hemşire ile 5 soruluk teach-back (öğrendiğini kendi cümleleriyle anlatma) ve hastanın tek başına çözebileceği 5 soruluk doğru/yanlış testi.
-7. **Acil durumlar:** "Servisi ara" ve "112" butonları ile hemen haber verilecek belirtiler.
+7. **Acil durumlar:** Hemen başvurulacak belirtiler ve 112'yi arama butonu.
 
-Her ekranda **Sesli dinle** (tarayıcının Türkçe konuşma özelliği), üst çubukta **A+** (yazıyı büyütme) ve **Acil** butonu vardır.
+Her ekranda **Sesli dinle** vardır. Okuma sırasında ekranın altında Yavaş, Normal ve Hızlı hız seçenekleri çıkar; seçilen hız telefonda hatırlanır. Üst çubukta **A+** (yazıyı büyütme) ve **Acil** butonları bulunur.
 
-## Servis telefonunu eklemek
+## Tasarım
 
-`index.html` dosyasında şu satırı bulun ve numarayı yazın:
+- **Yazı tipi:** Atkinson Hyperlegible Next. Braille Institute tarafından az gören okuyucular için tasarlanmıştır; benzer harfleri (I, l, 1 gibi) birbirinden kolay ayırt ettirir. Rakamlar telefonun kendi yazı tipiyle gösterilir.
+- **Renkler:** Her bölümün kendi rengi vardır; ana sayfadaki kart ile bölümün başlığı aynı renktedir. Sonuç kartlarındaki yeşil, sarı ve kırmızı yalnızca ağız kontrolü sonucu için kullanılır.
+- **Okunabilirlik:** Metin en az 20 piksel, butonlar en az 60 piksel yüksekliktedir. Telefonun koyu teması da desteklenir.
 
-```js
-var SERVIS_TELEFONU = '[SERVİS TELEFONU]';
-```
+## Yayınlama (GitHub Pages)
 
-Örnek: `var SERVIS_TELEFONU = '0 342 000 00 00';`
+Uygulama `sezar231/agiz-bakimi` deposundan yayınlanır:
 
-Numara eklenmeden "Servisi ara" butonu arama yapmaz, uyarı gösterir.
+1. GitHub'da `agiz-bakimi` deposunu aç.
+2. **Settings → Pages** bölümüne gir.
+3. "Build and deployment" altında Source: **Deploy from a branch**, Branch: **main**, klasör: **/ (root)** seç ve **Save**'e bas.
+4. Birkaç dakika sonra uygulama https://sezar231.github.io/agiz-bakimi/ adresinde açılır.
 
-## Yayınlama
-
-**Kendi sunucunuz:** `index.html` ve `sw.js` dosyalarını aynı klasöre koyun. Sunucu HTTPS olmalıdır. Hasta uygulamayı bir kez açtıktan sonra internet olmadan da açabilir. İçeriği değiştirdiğinizde `sw.js` içindeki `agiz-bakimi-v1` adını `v2` yapın, telefonlar yeni sürümü alır.
-
-**GitHub Pages (ücretsiz):** Bu klasör ana dala (main) birleştirildikten sonra depo ayarlarında Settings → Pages → "Deploy from a branch" → `main` / `(root)` seçin. Adres şöyle olur: `https://sezar231.github.io/sezar231/mukozit-egitim/`
-
-**QR kartı:** Kalıcı adres belli olduktan sonra `qr-kart.html` dosyasını bilgisayarda Chrome ile açın. Adresi ve telefonu yazın, Ctrl+P ile yazdırın: A4, ölçek %100, kenar boşluğu yok, arka plan grafikleri açık. Önce düz kâğıda deneme basıp QR kodu telefonla okutun.
+İçeriği değiştirdiğinizde `sw.js` içindeki `agiz-bakimi-v2` adını bir artırın (`v3`). Böylece telefonlar yeni sürümü alır.
 
 ## Kaynaklar
 
@@ -67,11 +69,11 @@ Alıntıların tamamı `kaynak-alintilari.md` dosyasındadır.
 
 ### Kaynakta olmayan tek ekleme
 
-Acil ekranındaki "Servise ulaşamazsanız 112'yi arayın" cümlesi ve 112 butonu.
+Acil durumda aranacak numara olarak 112. Uygulamada ve kartta başka bir telefon numarası veya servis adı yoktur.
 
 ## Sınırlar
 
-- Uygulama genel bilgi verir, tanı koymaz. Gerçek hastalarla kullanmadan önce servis ekibinin ve sorumlu öğretim elemanının onayı alınmalıdır.
-- "Sesli dinle", telefonda Türkçe metin okuma sesi yüklüyse çalışır.
-- Takip kayıtları yalnızca o telefon ve o tarayıcıda durur. Adres değişirse veya tarayıcı verileri silinirse kayıtlar görünmez.
+- Uygulama genel bilgi verir, tanı koymaz. Gerçek hastalarla kullanmadan önce sorumlu öğretim elemanının ve servis ekibinin onayı alınmalıdır.
+- "Sesli dinle", telefonda Türkçe metin okuma sesi yüklüyse çalışır. Ses yoksa uygulama bunu söyler.
+- Takip kayıtları yalnızca o telefon ve o tarayıcıda durur. Tarayıcı verileri silinirse kayıtlar da silinir.
 - MASCC/ISOO 2020 (K3) alıntıları kılavuzun özetinden alınmıştır. Atıf yapmadan önce tam metinle karşılaştırın.

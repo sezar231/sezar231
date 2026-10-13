@@ -1,0 +1,1394 @@
+<!doctype html><!--wrap-->
+<html lang="tr"><!--wrap-->
+<head><!--wrap-->
+<meta charset="utf-8"><!--wrap-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><!--wrap-->
+<meta name="theme-color" content="#0A6B66"><!--wrap-->
+<meta name="apple-mobile-web-app-capable" content="yes"><!--wrap-->
+<meta name="mobile-web-app-capable" content="yes"><!--wrap-->
+<meta name="apple-mobile-web-app-title" content="Ağız Bakımı"><!--wrap-->
+<title>Kemoterapide Ağız Bakımı</title>
+<meta name="description" content="Kemoterapi alan hastalar için ağız bakımı ve oral mukozit eğitimi: ağız kontrolü, diş fırçalama, gargara, beslenme, günlük takip ve acil durumlar.">
+<style>
+/* Yerleşim: tek, sakin bir sütun (en fazla 38rem); yapışkan üst çubuk; her bölüm adres çubuğundaki #etiketle açılan tam bir ekran; büyük dokunma alanları. */
+:root{
+  --bg:#EDF4F2; --surface:#FFFFFF; --surface-2:#F5FAF9;
+  --ink:#0F2E2C; --muted:#476360; --line:#C7D9D5;
+  --accent:#0A6B66; --accent-ink:#FFFFFF; --accent-soft:#D7EDE9;
+  --ok:#1C6E36; --ok-ink:#FFFFFF; --ok-soft:#E0F2E5; --ok-line:#78BD8B;
+  --warn:#744A00; --warn-ink:#1F1500; --warn-soft:#FFF1CC; --warn-line:#DDA20F;
+  --danger:#B0261D; --danger-ink:#FFFFFF; --danger-soft:#FCE7E5; --danger-line:#E2928B;
+  --shadow:0 1px 2px rgba(15,46,44,.07),0 6px 18px rgba(15,46,44,.06);
+  --water:#BCE2F0; --glass:#EAF6FA; --lip:#E8A3A3; --cav:#7A2E33; --tng:#F29A9D; --tooth:#FFFFFF;
+  --spot:#D33A2D; --gum:#F4BBBB; --cream:#FFF3D6;
+  --banana:#F6D55C; --potato:#D8AE74; --pasta:#E9C25A; --lemon:#F2DD4C; --orange:#F4A340;
+  --tomato:#E35D47; --chips:#F2C45A; --bread:#DFB06D; --pepper:#D6402F; --leaf:#62AE52;
+  --tea:#B8502A; --carrot:#EE8533; --grapefruit:#F59A86; --wine:#8E2A47; --lid:#9AAAA7; --pickle:#7EA848;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;
+  --radius:16px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1716; --surface:#13221F; --surface-2:#182B28;
+    --ink:#E3EFEC; --muted:#A2BBB6; --line:#2C433F;
+    --accent:#5DC5B9; --accent-ink:#04201D; --accent-soft:#163A36;
+    --ok:#7DDA98; --ok-ink:#062010; --ok-soft:#14301D; --ok-line:#2F7A48;
+    --warn:#F3C653; --warn-soft:#2F250B; --warn-line:#A7801B;
+    --danger:#FF8F84; --danger-ink:#2A0603; --danger-soft:#3A1614; --danger-line:#A1453D;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 6px 18px rgba(0,0,0,.25);
+    --water:#2C6175; --glass:#1C3540; --lip:#A65C61; --cav:#3B1316; --tng:#C2646A; --tooth:#EEF3F2;
+    --spot:#FF6B5E; --gum:#8C4A52; --cream:#F2E5C2;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1716; --surface:#13221F; --surface-2:#182B28;
+  --ink:#E3EFEC; --muted:#A2BBB6; --line:#2C433F;
+  --accent:#5DC5B9; --accent-ink:#04201D; --accent-soft:#163A36;
+  --ok:#7DDA98; --ok-ink:#062010; --ok-soft:#14301D; --ok-line:#2F7A48;
+  --warn:#F3C653; --warn-soft:#2F250B; --warn-line:#A7801B;
+  --danger:#FF8F84; --danger-ink:#2A0603; --danger-soft:#3A1614; --danger-line:#A1453D;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 6px 18px rgba(0,0,0,.25);
+  --water:#2C6175; --glass:#1C3540; --lip:#A65C61; --cav:#3B1316; --tng:#C2646A; --tooth:#EEF3F2;
+  --spot:#FF6B5E; --gum:#8C4A52; --cream:#F2E5C2;
+  color-scheme:dark;
+}
+html.lg{font-size:118.75%}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.25rem;line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+h1,h2,h3{margin:0;line-height:1.2;text-wrap:balance}
+h1{font-size:1.75rem;font-weight:750;letter-spacing:-.01em}
+h2{font-size:1.375rem;font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0}
+h1:focus{outline:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Üst çubuk */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:38rem;margin:0 auto;padding-inline:1rem;padding-block:.5rem;display:flex;align-items:center;gap:.5rem}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:1rem;color:var(--ink);text-decoration:none;min-height:2.75rem;flex:1 1 auto;min-width:0}
+.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand .ic{color:var(--accent);width:1.6rem;height:1.6rem}
+.tb{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;min-height:2.75rem;min-width:2.75rem;padding:.25rem .75rem;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:1rem;font-weight:700;text-decoration:none;cursor:pointer;flex:none}
+.tb.alert{border-color:var(--danger-line);color:var(--danger)}
+.tb[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+
+.wrap{max-width:38rem;margin:0 auto;padding-inline:1rem;padding-block:1.25rem 2rem}
+.stack{display:flex;flex-direction:column;gap:1rem}
+.stack-lg{display:flex;flex-direction:column;gap:1.5rem}
+.ic{width:1.5rem;height:1.5rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Ekran başlığı ve sesli dinle */
+.head{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem}
+.head h1{flex:1 1 12rem}
+.speak{display:inline-flex;align-items:center;gap:.5rem;min-height:3rem;padding:.4rem 1rem .4rem .8rem;border-radius:999px;border:2px solid var(--accent);background:var(--accent-soft);color:var(--accent);font:inherit;font-size:1.05rem;font-weight:700;cursor:pointer}
+.speak[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.lead{font-size:1.25rem}
+.muted{color:var(--muted)}
+.src{font-size:.875rem;color:var(--muted)}
+.small{font-size:1rem}
+
+/* Ana sayfa kartları */
+.intro{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:1.125rem 1.25rem;display:flex;flex-direction:column;gap:.6rem}
+.tiles{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
+.tile{display:grid;grid-template-columns:3.5rem minmax(0,1fr) 1.5rem;align-items:center;gap:1rem;padding:1rem 1rem 1rem 1.125rem;min-height:5.5rem;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);color:var(--ink);text-decoration:none}
+.tile:active{transform:scale(.99)}
+.tile .bx{width:3.5rem;height:3.5rem;border-radius:14px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.tile .bx .ic{width:2rem;height:2rem}
+.tile b{display:block;font-size:1.3rem;line-height:1.25}
+.tile small{display:block;font-size:1rem;color:var(--muted);line-height:1.35;margin-top:.15rem}
+.tile .chev{color:var(--muted)}
+.tile.sos{border-color:var(--danger-line)}
+.tile.sos .bx{background:var(--danger-soft);color:var(--danger)}
+.tile.sos b{color:var(--danger)}
+
+/* Bilgi kutuları */
+.note{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:1rem 1.125rem;display:flex;flex-direction:column;gap:.6rem}
+.note.warn{background:var(--warn-soft);border-color:var(--warn-line)}
+.note.soft{background:var(--accent-soft);border-color:transparent}
+.note h2,.note h3{display:flex;align-items:center;gap:.5rem}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.list li{display:grid;grid-template-columns:1.5rem minmax(0,1fr);gap:.6rem;align-items:start}
+.list li .ic{margin-top:.15rem;color:var(--accent)}
+.list.red li .ic{color:var(--danger)}
+
+/* Butonlar */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.75rem;padding:.75rem 1.25rem;border-radius:14px;border:2px solid transparent;font:inherit;font-weight:700;line-height:1.2;text-align:center;text-decoration:none;cursor:pointer}
+.btn .ic{width:1.6rem;height:1.6rem}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{background:var(--surface);color:var(--accent);border-color:var(--accent)}
+.btn-danger{background:var(--danger);color:var(--danger-ink)}
+.btn-danger-ghost{background:var(--surface);color:var(--danger);border-color:var(--danger)}
+.btn-ok{background:var(--ok);color:var(--ok-ink)}
+.btn-block{width:100%}
+.btn-xl{min-height:4.5rem;font-size:1.4rem}
+.btn[disabled]{opacity:.45;cursor:default}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+@media (max-width:340px){.row2{grid-template-columns:1fr}}
+
+/* Soru seçenekleri */
+.progress{display:flex;align-items:center;gap:.75rem;font-size:1rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{flex:1;height:.6rem;border-radius:999px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .3s}
+.opts{display:grid;gap:.75rem}
+.opt{display:grid;grid-template-columns:4.25rem minmax(0,1fr);align-items:center;gap:1rem;padding:.75rem 1rem;min-height:5.5rem;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius);color:var(--ink);font:inherit;font-weight:650;text-align:left;cursor:pointer}
+.opt svg{width:4.25rem;height:4.25rem}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+
+/* Sonuç kartı */
+.result{border-radius:var(--radius);border:2px solid var(--line);padding:1.25rem;display:flex;flex-direction:column;gap:.85rem}
+.result .rh{display:flex;align-items:center;gap:.9rem}
+.result .ri{width:3.75rem;height:3.75rem;border-radius:50%;display:grid;place-items:center;flex:none}
+.result .ri .ic{width:2.1rem;height:2.1rem;stroke-width:2.6}
+.result.ok{background:var(--ok-soft);border-color:var(--ok-line)}
+.result.ok .ri{background:var(--ok);color:var(--ok-ink)}
+.result.ok h2{color:var(--ok)}
+.result.warn{background:var(--warn-soft);border-color:var(--warn-line)}
+.result.warn .ri{background:var(--warn-line);color:var(--warn-ink)}
+.result.warn h2{color:var(--warn)}
+.result.danger{background:var(--danger-soft);border-color:var(--danger-line)}
+.result.danger .ri{background:var(--danger);color:var(--danger-ink)}
+.result.danger h2{color:var(--danger)}
+.nurse{font-size:1rem;border-top:1px dashed var(--line);padding-top:.75rem;color:var(--muted)}
+
+/* Adım adım anlatım */
+.pager{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:1rem;display:flex;flex-direction:column;gap:1rem;box-shadow:var(--shadow)}
+.step{display:flex;flex-direction:column;gap:.75rem}
+.fig{background:var(--surface-2);border-radius:12px;display:grid;place-items:center;padding:.5rem}
+.fig svg{width:100%;max-width:22rem;height:auto;aspect-ratio:240/150;max-height:13rem}
+.stepnum{font-size:1rem;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.dots{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap}
+.dots i{width:.7rem;height:.7rem;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--accent);width:1.6rem;border-radius:999px}
+
+/* Sayaç */
+.timer{display:grid;justify-items:center;gap:1rem;text-align:center}
+.ring{position:relative;width:13.5rem;max-width:100%;aspect-ratio:1}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .trk{fill:none;stroke:var(--line);stroke-width:14}
+.ring .val{fill:none;stroke:var(--accent);stroke-width:14;stroke-linecap:round;transition:stroke-dashoffset .25s linear}
+.ring .dg{position:absolute;inset:0;display:grid;place-items:center;font-size:3.25rem;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.timer .row2{width:100%}
+
+/* Yiyecek oyunu */
+.food{background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:1.25rem;display:grid;justify-items:center;gap:.5rem;box-shadow:var(--shadow);text-align:center}
+.food svg{width:9.5rem;height:9.5rem}
+.food .name{font-size:1.6rem;font-weight:750}
+.fb{border-radius:var(--radius);padding:1rem 1.125rem;display:flex;flex-direction:column;gap:.5rem;border:2px solid}
+.fb.good{background:var(--ok-soft);border-color:var(--ok-line)}
+.fb.bad{background:var(--warn-soft);border-color:var(--warn-line)}
+.fb .verdict{display:flex;align-items:center;gap:.5rem;font-weight:750;font-size:1.3rem}
+.tag{display:inline-flex;align-items:center;gap:.35rem;padding:.15rem .7rem;border-radius:999px;font-size:1rem;font-weight:750}
+.tag.yes{background:var(--ok);color:var(--ok-ink)}
+.tag.no{background:var(--danger);color:var(--danger-ink)}
+.cols{display:grid;grid-template-columns:1fr;gap:1rem}
+@media (min-width:520px){.cols{grid-template-columns:1fr 1fr}}
+
+/* Takip */
+.slot{display:grid;gap:.5rem}
+.slot h3{font-size:1.1rem}
+.tog{display:flex;align-items:center;gap:.6rem;min-height:3.5rem;padding:.5rem .75rem;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:1.05rem;font-weight:650;text-align:left;cursor:pointer}
+.tog .box{width:1.75rem;height:1.75rem;border-radius:7px;border:2px solid var(--muted);display:grid;place-items:center;flex:none}
+.tog .box .ic{width:1.2rem;height:1.2rem;stroke-width:3;opacity:0}
+.tog[aria-pressed="true"]{background:var(--ok-soft);border-color:var(--ok-line)}
+.tog[aria-pressed="true"] .box{background:var(--ok);border-color:var(--ok);color:var(--ok-ink)}
+.tog[aria-pressed="true"] .box .ic{opacity:1}
+.chip{display:inline-flex;align-items:center;gap:.4rem;padding:.2rem .75rem;border-radius:999px;font-size:1rem;font-weight:700;border:1.5px solid var(--line);background:var(--surface-2)}
+.chip i{width:.8rem;height:.8rem;border-radius:50%;background:var(--muted)}
+.chip.ok i{background:var(--ok)} .chip.warn i{background:var(--warn-line)} .chip.danger i{background:var(--danger)}
+.scroll-x{overflow-x:auto}
+table.week{width:100%;border-collapse:collapse;font-size:1rem;font-variant-numeric:tabular-nums}
+table.week th,table.week td{padding:.45rem .25rem;text-align:center;border-bottom:1px solid var(--line)}
+table.week th:first-child,table.week td:first-child{text-align:left;padding-left:0;white-space:nowrap}
+table.week thead th{font-size:.85rem;color:var(--muted);font-weight:700}
+table.week tr.today td{font-weight:750}
+.d{display:inline-block;width:1.15rem;height:1.15rem;border-radius:50%;border:2px solid var(--muted);vertical-align:middle}
+.d.full{background:var(--ok);border-color:var(--ok)}
+.d.half{background:linear-gradient(90deg,var(--ok) 50%,transparent 50%);border-color:var(--ok)}
+.d.st-ok{background:var(--ok);border-color:var(--ok)}
+.d.st-warn{background:var(--warn-line);border-color:var(--warn-line)}
+.d.st-danger{background:var(--danger);border-color:var(--danger)}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem 1rem;font-size:.9rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+
+/* Test */
+.qbig{font-size:1.45rem;font-weight:700;line-height:1.35}
+details.keys{background:var(--surface-2);border:1.5px dashed var(--line);border-radius:12px;padding:.75rem 1rem;font-size:1.05rem}
+details.keys summary{cursor:pointer;font-weight:700;color:var(--accent);min-height:2.25rem;display:flex;align-items:center}
+details.keys ul{margin:.5rem 0 0;padding-left:1.25rem;display:grid;gap:.35rem}
+table.sum{width:100%;border-collapse:collapse;font-size:1rem}
+table.sum th,table.sum td{text-align:left;padding:.5rem .25rem;border-bottom:1px solid var(--line);vertical-align:top}
+.res-ok{color:var(--ok);font-weight:700}.res-re{color:var(--warn);font-weight:700}.res-gap{color:var(--danger);font-weight:700}
+
+/* Acil */
+.callbox{background:var(--danger-soft);border:2px solid var(--danger-line);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column;gap:.85rem}
+.callbox h2{color:var(--danger)}
+.num{font-size:1.5rem;font-weight:750;letter-spacing:.02em;user-select:all;font-variant-numeric:tabular-nums}
+.numrow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
+
+/* Kaynaklar */
+ol.refs{margin:0;padding-left:0;list-style:none;display:grid;gap:.9rem;font-size:1rem}
+ol.refs li{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:.85rem 1rem;overflow-wrap:anywhere}
+ol.refs b{color:var(--accent)}
+
+/* Alt bilgi ve bildirim */
+.foot{max-width:38rem;margin:0 auto;padding-inline:1rem;padding-block:1rem 2.5rem;display:flex;flex-direction:column;gap:.6rem;font-size:1rem;color:var(--muted);border-top:1px solid var(--line)}
+.foot strong{color:var(--ink)}
+.toast{position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));max-width:34rem;margin:0 auto;z-index:30;background:var(--ink);color:var(--bg);border-radius:14px;padding:.9rem 1.1rem;font-size:1.05rem;font-weight:600;box-shadow:var(--shadow)}
+
+/* Çizimler */
+.s{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.sf{fill:var(--surface);stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
+.fi{fill:var(--ink)}
+.fd{stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.sa{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round}
+.sd{fill:none;stroke:var(--danger);stroke-width:4;stroke-linecap:round}
+.sw{fill:none;stroke:var(--water);stroke-width:3;stroke-linecap:round}
+.t{fill:var(--ink);font:600 13px var(--font)}
+.ta{fill:var(--accent);font:700 13px var(--font)}
+.f-water{fill:var(--water)} .f-glass{fill:var(--glass)} .f-lip{fill:var(--lip)} .f-cav{fill:var(--cav)} .f-tng{fill:var(--tng)}
+.f-tooth{fill:var(--tooth)} .f-spot{fill:var(--spot)} .f-gum{fill:var(--gum)} .f-cream{fill:var(--cream)} .f-soft{fill:var(--accent-soft)}
+.f-accent{fill:var(--accent)} .f-danger{fill:var(--danger)} .f-surface{fill:var(--surface)} .f-plate{fill:var(--accent-soft)}
+.f-banana{fill:var(--banana)} .f-potato{fill:var(--potato)} .f-lemon{fill:var(--lemon)} .f-orange{fill:var(--orange)}
+.f-tomato{fill:var(--tomato)} .f-chips{fill:var(--chips)} .f-bread{fill:var(--bread)} .f-pepper{fill:var(--pepper)}
+.f-leaf{fill:var(--leaf)} .f-tea{fill:var(--tea)} .f-carrot{fill:var(--carrot)} .f-grapefruit{fill:var(--grapefruit)}
+.f-wine{fill:var(--wine)} .f-lid{fill:var(--lid)} .f-pickle{fill:var(--pickle)} .f-pasta{fill:none;stroke:var(--pasta);stroke-width:4;stroke-linecap:round}
+.ulc{fill:var(--cream);stroke:var(--spot);stroke-width:2.5}
+.redspot{fill:var(--spot);opacity:.7}
+
+/* Animasyonlar */
+.anim{transform-box:fill-box;transform-origin:center}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 1.6s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+.drip{animation:drip 1.4s ease-in infinite}
+.drip.d2{animation-delay:.45s}.drip.d3{animation-delay:.9s}
+@keyframes drip{0%{transform:translateY(0);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateY(42px);opacity:0}}
+.grow{transform-box:fill-box;transform-origin:0% 50%;animation:grow 3s ease-out infinite}
+@keyframes grow{0%,10%{transform:scaleX(0)}55%,100%{transform:scaleX(1)}}
+.scrub{animation:scrub 1.2s ease-in-out infinite alternate}
+@keyframes scrub{from{transform:translateX(-34px)}to{transform:translateX(34px)}}
+.spin{transform-box:view-box;animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.air{animation:air 1.8s ease-in-out infinite}
+.air.a2{animation-delay:.3s}.air.a3{animation-delay:.6s}
+@keyframes air{0%,100%{opacity:.15;transform:translateX(0)}50%{opacity:1;transform:translateX(6px)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-in-out infinite}
+.pulse.p2{animation-delay:.6s}.pulse.p3{animation-delay:1.2s}.pulse.p4{animation-delay:1.8s}
+@keyframes pulse{0%,30%,100%{transform:scale(1)}15%{transform:scale(1.14)}}
+.fill{transform-box:fill-box;transform-origin:50% 100%;animation:fill 3.2s ease-in-out infinite}
+@keyframes fill{0%{transform:scaleY(.08)}60%,100%{transform:scaleY(1)}}
+.tip{transform-box:fill-box;transform-origin:100% 50%;animation:tip 2.4s ease-in-out infinite}
+@keyframes tip{0%,30%{transform:rotate(0)}50%,80%{transform:rotate(-22deg)}100%{transform:rotate(0)}}
+.fall{animation:fall 2.4s ease-in infinite}
+.fall.f2{animation-delay:.15s}.fall.f3{animation-delay:.3s}.fall.f4{animation-delay:.45s}
+@keyframes fall{0%,45%{transform:translateY(0);opacity:0}50%{opacity:1}85%{opacity:1}100%{transform:translateY(46px);opacity:0}}
+.swirl{transform-box:fill-box;transform-origin:center;animation:spin 3s linear infinite}
+.puffL{transform-box:fill-box;transform-origin:100% 50%;animation:puff 1.2s ease-in-out infinite alternate}
+.puffR{transform-box:fill-box;transform-origin:0% 50%;animation:puff 1.2s ease-in-out infinite alternate-reverse}
+@keyframes puff{from{transform:scale(.85)}to{transform:scale(1.2)}}
+.hand{transform-box:view-box;transform-origin:120px 78px;animation:hand 4s ease-in-out infinite}
+@keyframes hand{0%,10%{transform:rotate(0)}70%,100%{transform:rotate(60deg)}}
+.steam{animation:steam 2s ease-in-out infinite}
+.steam.s2{animation-delay:.4s}.steam.s3{animation-delay:.8s}
+@keyframes steam{0%{opacity:0;transform:translateY(6px)}50%{opacity:1}100%{opacity:0;transform:translateY(-8px)}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head><!--wrap-->
+<body><!--wrap-->
+<div id="app" lang="tr">
+
+<!-- İkon kümesi: basit çizgi ikonlar -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9v11h4.5v-6h4v6h4.5V9"/></symbol>
+    <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M3.5 9.5H7l4.5-4v13L7 14.5H3.5z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M17.8 6.3a7.6 7.6 0 0 1 0 11.4"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/></symbol>
+    <symbol id="i-mouth" viewBox="0 0 24 24"><path d="M2.5 12c2.6-3.7 5.5-5.3 7.3-4.5.9.4 1.5.8 2.2.8s1.3-.4 2.2-.8c1.8-.8 4.7.8 7.3 4.5-2.6 3.9-5.9 5.7-9.5 5.7S5.1 15.9 2.5 12z"/><path d="M2.5 12c3.1 1 6.3 1.4 9.5 1.4s6.4-.4 9.5-1.4"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24"><path d="M2 16h11"/><path d="M13 14.5h7.5a1 1 0 0 1 1 1v1.5a1 1 0 0 1-1 1H13z"/><path d="M14.5 14.5V10M17.25 14.5V10M20 14.5V10"/></symbol>
+    <symbol id="i-glass" viewBox="0 0 24 24"><path d="M5.5 4h13l-1.6 15.2a2 2 0 0 1-2 1.8H9.1a2 2 0 0 1-2-1.8z"/><path d="M6.3 10.5h11.4"/><circle cx="10.5" cy="14.5" r=".8"/><circle cx="13.6" cy="17" r=".8"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 12h18a9 8 0 0 1-18 0z"/><path d="M14.5 12 19 4.5"/><path d="M8.5 20.5h7"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="m8.5 14.6 2.3 2.3 4.7-4.7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4.5h16v11H9.5L5 19.5v-4H4z"/><path d="M8 8.5h8M8 11.5h5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5 2.5 20h19z"/><path d="M12 10v4.5"/><path d="M12 17.4v.1"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h3l1.5 4.2-2 1.3a11 11 0 0 0 5.9 5.9l1.3-2 4.2 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7.6v.1"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5c-3.5-.5-6.5 0-8.5 1.5z"/><path d="M12 6.5v13"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.4-5.5"/><path d="M4.5 4v4.5H9"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6A1.5 1.5 0 0 0 14 4.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M10 14.3V5a2 2 0 0 1 4 0v9.3a4 4 0 1 1-4 0z"/><path d="M12 9v7"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/></symbol>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7.5 3.5c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.6 1 5 2.5 5s1.7-2.4 2.3-4.5c.4-1.4 1-2 1.7-2s1.3.6 1.7 2c.6 2.1.8 4.5 2.3 4.5s2.1-2.4 2.5-5c.5-3 2-4.5 2-7.5 0-2.5-1.5-4.5-4-4.5-1.8 0-2.8 1-4.5 1s-2.7-1-4.5-1z"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+    <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></symbol>
+    <symbol id="i-pill" viewBox="0 0 24 24"><rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-35 12 12)"/><path d="m9.8 8.9 4.4 6.2"/></symbol>
+    <symbol id="i-leafy" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13.5 14-14-.5 9-6 14-14 14z"/><path d="M5 19 13 11"/></symbol>
+
+    <!-- Soru seçenekleri için resimli ikonlar (64×64) -->
+    <symbol id="o-face-ok" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" class="sf"/><circle cx="24" cy="28" r="2.6" class="fi"/><circle cx="40" cy="28" r="2.6" class="fi"/><path d="M23 39c5 5 13 5 18 0" class="s"/></symbol>
+    <symbol id="o-face-pain" viewBox="0 0 64 64"><circle cx="32" cy="34" r="23" class="sf"/><path d="M19 28l6 3-6 3M45 28l-6 3 6 3" class="s"/><path d="M22 45c3-3 5 0 8-3s5 0 8-3 3 1 4 1" class="s"/><path d="M50 10l4-5M55 17l6-1M45 7l.5-5" class="sd" style="stroke-width:3"/></symbol>
+    <symbol id="o-mouth" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="25" ry="17" class="f-lip fd"/><ellipse cx="32" cy="33" rx="18" ry="10" class="f-cav"/><rect x="20" y="23.5" width="24" height="5" rx="2" class="f-tooth"/><path d="M18 37c4-4 9-5 14-5s10 1 14 5c-4 3.5-9 4.5-14 4.5S22 40.5 18 37z" class="f-tng"/></symbol>
+    <symbol id="o-mouth-red" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="25" ry="17" class="f-lip fd"/><ellipse cx="32" cy="33" rx="18" ry="10" class="f-cav"/><rect x="20" y="23.5" width="24" height="5" rx="2" class="f-tooth"/><path d="M18 37c4-4 9-5 14-5s10 1 14 5c-4 3.5-9 4.5-14 4.5S22 40.5 18 37z" class="f-tng"/><ellipse cx="24" cy="36" rx="5" ry="3" class="redspot"/><ellipse cx="40" cy="37" rx="5" ry="3" class="redspot"/><ellipse cx="32" cy="39" rx="4" ry="2.3" class="redspot"/></symbol>
+    <symbol id="o-mouth-ulcer" viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="25" ry="17" class="f-lip fd"/><ellipse cx="32" cy="33" rx="18" ry="10" class="f-cav"/><rect x="20" y="23.5" width="24" height="5" rx="2" class="f-tooth"/><path d="M18 37c4-4 9-5 14-5s10 1 14 5c-4 3.5-9 4.5-14 4.5S22 40.5 18 37z" class="f-tng"/><circle cx="38" cy="36.5" r="3.6" class="ulc"/><circle cx="25" cy="37.5" r="2.6" class="ulc"/></symbol>
+    <symbol id="o-plate" viewBox="0 0 64 64"><circle cx="34" cy="34" r="19" class="sf"/><circle cx="34" cy="34" r="11" class="s"/><path d="M8 12v10a3 3 0 0 0 3 3v28M11 12v9M14 12v10a3 3 0 0 1-3 3" class="s"/><path d="M58 12c-3 0-4.5 4-4.5 10v5H58v26" class="s"/></symbol>
+    <symbol id="o-cup" viewBox="0 0 64 64"><path d="M18 22h28l-3.5 30a4 4 0 0 1-4 3.5H25.5a4 4 0 0 1-4-3.5z" class="sf"/><path d="M20.3 34h23.4l-2 17.3a2.5 2.5 0 0 1-2.5 2.2H24.8a2.5 2.5 0 0 1-2.5-2.2z" class="f-water"/><path d="M36 30 42 8h7" class="s"/></symbol>
+    <symbol id="o-cup-x" viewBox="0 0 64 64"><path d="M18 22h28l-3.5 30a4 4 0 0 1-4 3.5H25.5a4 4 0 0 1-4-3.5z" class="sf"/><path d="M12 12l40 40M52 12 12 52" class="sd"/></symbol>
+    <symbol id="o-thermo-low" viewBox="0 0 64 64"><path d="M27 40V12a5 5 0 0 1 10 0v28a9 9 0 1 1-10 0z" class="sf"/><circle cx="32" cy="47" r="5" class="f-accent"/><path d="M32 46V36" class="sa"/><path d="M42 18h6M42 26h6M42 34h6" class="s"/></symbol>
+    <symbol id="o-thermo-high" viewBox="0 0 64 64"><path d="M27 40V12a5 5 0 0 1 10 0v28a9 9 0 1 1-10 0z" class="sf"/><circle cx="32" cy="47" r="5" class="f-danger"/><path d="M32 46V14" class="sd"/><path d="M45 14c3 3-3 6 0 9M52 14c3 3-3 6 0 9" class="sd" style="stroke-width:2.6"/></symbol>
+    <symbol id="o-thermo-q" viewBox="0 0 64 64"><path d="M21 40V12a5 5 0 0 1 10 0v28a9 9 0 1 1-10 0z" class="sf"/><circle cx="26" cy="47" r="5" class="f-soft fd"/><text x="44" y="34" style="fill:var(--accent);font:800 26px var(--font)">?</text></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#ana" aria-label="Ana sayfa: Kemoterapide Ağız Bakımı"><svg class="ic" aria-hidden="true"><use href="#i-mouth"/></svg><span>Ağız Bakımı</span></a>
+    <a class="tb" id="homeBtn" href="#ana" hidden><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><span>Ana sayfa</span></a>
+    <button class="tb" id="sizeBtn" type="button" aria-pressed="false" aria-label="Yazıyı büyüt">A+</button>
+    <a class="tb alert" id="sosBtn" href="#acil" aria-label="Acil durumlar"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span>Acil</span></a>
+  </div>
+</header>
+
+<main>
+<!-- ================= ANA SAYFA ================= -->
+<section class="screen wrap stack-lg" id="s-ana" aria-labelledby="h-ana">
+  <div class="head">
+    <h1 id="h-ana" tabindex="-1">Kemoterapide ağız bakımı</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <div class="intro">
+    <p>Kemoterapi sırasında ağızda yara görülebilir. Buna mukozit (ağız içi dokunun iltihaplanması ve yara oluşması) denir. Bu etkiler genellikle geçicidir.</p>
+    <p class="src">Kaynak: K1</p>
+    <p>Enfeksiyon yoksa genellikle 2-4 haftada kendiliğinden iyileşir. Düzenli ağız bakımı, yaraları önlemeye yardımcı olur.</p>
+    <p class="src">Kaynak: K4, K3</p>
+  </div>
+  <nav aria-label="Bölümler">
+    <ul class="tiles">
+      <li><a class="tile" href="#kontrol"><span class="bx"><svg class="ic" aria-hidden="true"><use href="#i-mouth"/></svg></span><span><b>Bugün ağzım nasıl?</b><small>4 kısa soru, renkli sonuç</small></span><svg class="ic chev" aria-hidden="true"><use href="#i-chev-r"/></svg></a></li>
+      <li><a class="tile" href="#fircalama"><span class="bx"><svg class="ic" aria-hidden="true"><use href="#i-brush"/></svg></span><span><b>Doğru diş fırçalama</b><small>Adım adım anlatım ve 2 dakikalık sayaç</small></span><svg class="ic chev" aria-hidden="true"><use href="#i-chev-r"/></svg></a></li>
+      <li><a class="tile" href="#gargara"><span class="bx"><svg class="ic" aria-hidden="true"><use href="#i-glass"/></svg></span><span><b>Gargara tarifi</b><small>Karbonatlı suyla ağız çalkalama</small></span><svg class="ic chev" aria-hidden="true"><use href="#i-chev-r"/></svg></a></li>
+      <li><a class="tile" href="#yiyecek"><span class="bx"><svg class="ic" aria-hidden="true"><use href="#i-bowl"/></svg></span><span><b>Bunu yiyebilir miyim?</b><small>Yiyecek kartlarıyla kısa bir oyun</small></span><svg class="ic chev" aria-hidden="true"><use href="#i-chev-r"/></svg></a></li>
+      <li><a class="tile" href="#takip"><span class="bx"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg></span><span><b>Günlük takip</b><small>Bugün ve bu hafta yaptığınız bakım</small></span><svg class="ic chev" aria-hidden="true"><use href="#i-chev-r"/></svg></a></li>
+      <li><a class="tile" href="#test"><span class="bx"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg></span><span><b>Öğrendiklerimi anlatayım</b><small>Hemşirenizle 5 soruluk kısa test</small></span><svg class="ic chev" aria-hidden="true"><use href="#i-chev-r"/></svg></a></li>
+      <li><a class="tile sos" href="#acil"><span class="bx"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg></span><span><b>Acil durumlar</b><small>Hemen aramanız gereken durumlar</small></span><svg class="ic chev" aria-hidden="true"><use href="#i-chev-r"/></svg></a></li>
+    </ul>
+  </nav>
+  <div class="note soft">
+    <h2>Unutmayın</h2>
+    <ul class="list">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-ban"/></svg><span>Alkollü veya gliserinli hazır gargara kullanmayın.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-ban"/></svg><span>Sigara ve alkolden uzak durun.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-pill"/></svg><span>Aspirin türü ağrı kesiciler kanama riskini artırır. Kemoterapi sırasında kullanılmaz.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-leafy"/></svg><span>Her ilacı, bitki çayını, vitamini ve takviyeyi kullanmadan önce doktorunuza veya hemşirenize danışın. Kalp ilacı gibi düzenli kullandığınız bir ilacı da bırakmadan önce sorun.</span></li>
+    </ul>
+    <p class="src">Kaynak: K1, K4, K5</p>
+  </div>
+</section>
+
+<!-- ================= 1. BUGÜN AĞZIM NASIL ================= -->
+<section class="screen wrap stack-lg" id="s-kontrol" aria-labelledby="h-kontrol" hidden>
+  <div class="head">
+    <h1 id="h-kontrol" tabindex="-1">Bugün ağzım nasıl?</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <div id="chkQ" class="stack">
+    <p>Soruları yanıtlayın. Sonuçta ne yapmanız gerektiğini göreceksiniz.</p>
+    <div class="progress" data-nosay><span id="chkStep">Soru 1 / 4</span><span class="bar" aria-hidden="true"><i id="chkBar" style="width:25%"></i></span></div>
+    <h2 id="chkText">Ağzınızda ağrı veya hassasiyet var mı?</h2>
+    <div class="opts" id="chkOpts" role="group" aria-labelledby="chkText"></div>
+    <button class="btn btn-ghost" id="chkBack" type="button" hidden><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg>Önceki soru</button>
+    <p class="src">Bu kontrol tanı koymaz. DSÖ ağız yarası (oral mukozit) ölçeğinden hasta kullanımı için basitleştirilmiştir. Kaynak: K2</p>
+  </div>
+  <div id="chkR" class="stack" hidden></div>
+</section>
+
+<!-- ================= 2. DİŞ FIRÇALAMA ================= -->
+<section class="screen wrap stack-lg" id="s-fircalama" aria-labelledby="h-fircalama" hidden>
+  <div class="head">
+    <h1 id="h-fircalama" tabindex="-1">Doğru diş fırçalama</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <div class="pager" data-pager>
+    <div class="step">
+      <div class="fig" data-fig="meals" aria-hidden="true"></div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Ne zaman?</h2>
+      <p>Her yemekten sonra ve yatmadan önce dişlerinizi fırçalayın.</p>
+      <p class="src">Kaynak: K1, K5</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150"><text x="190" y="30" class="ta" text-anchor="middle">yumuşak kıllar</text>
+          <g class="sway"><path d="M168 86V54M175 86V52M182 86V53M189 86V51M196 86V53M203 86V52M210 86V54" class="sa"/></g>
+          <rect x="160" y="84" width="58" height="22" rx="7" class="f-soft fd"/>
+          <path d="M140 91h22v8h-22z" class="sf"/>
+          <rect x="20" y="87" width="122" height="16" rx="8" class="sf"/>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Yumuşak fırça</h2>
+      <p>Yumuşak naylon kıllı bir diş fırçası kullanın. Bebek diş fırçası da olabilir.</p>
+      <p class="src">Kaynak: K1, K4</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <rect x="34" y="22" width="80" height="14" rx="5" class="sf"/><rect x="96" y="34" width="18" height="14" rx="4" class="sf"/><rect x="58" y="12" width="10" height="10" rx="2" class="sf"/>
+          <path d="M105 56c-3 4-4 6-4 8a4 4 0 0 0 8 0c0-2-1-4-4-8z" class="f-water fd drip"/>
+          <path d="M105 56c-3 4-4 6-4 8a4 4 0 0 0 8 0c0-2-1-4-4-8z" class="f-water fd drip d2"/>
+          <path d="M105 56c-3 4-4 6-4 8a4 4 0 0 0 8 0c0-2-1-4-4-8z" class="f-water fd drip d3"/>
+          <path d="M84 106V92M92 106V91M100 106V90M108 106V90M116 106V91M124 106V92" class="sa"/>
+          <rect x="78" y="105" width="52" height="18" rx="6" class="f-soft fd"/><rect x="130" y="110" width="90" height="12" rx="6" class="sf"/>
+          <text x="160" y="44" class="ta">sıcak su</text>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Fırçayı yıkayın</h2>
+      <p>Her fırçalamadan önce fırçanızı sıcak suyla yıkayın. Böylece kıllar yumuşar.</p>
+      <p class="src">Kaynak: K1, K4</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <g transform="rotate(20 100 50)"><rect x="44" y="38" width="10" height="20" rx="2" class="sf"/><rect x="52" y="36" width="70" height="24" rx="6" class="f-glass fd"/><rect x="122" y="41" width="12" height="14" rx="2" class="sf"/></g>
+          <rect x="140" y="80" width="58" height="12" rx="6" class="f-cream fd grow"/>
+          <path d="M146 104V94M154 104V94M162 104V94M170 104V94M178 104V94M186 104V94M194 104V94" class="sa"/>
+          <rect x="138" y="103" width="64" height="20" rx="7" class="f-soft fd"/><rect x="40" y="108" width="100" height="12" rx="6" class="sf"/>
+          <text x="150" y="40" class="ta">naneli değil</text>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Diş macunu</h2>
+      <p>Naneli olmayan, hafif tatlı bir macun kullanın (örneğin çocuk diş macunu). Nane ağzı tahriş edebilir.</p>
+      <p class="muted small">Macun ağzınızı yakıyorsa: 1 bardak (yaklaşık 240 ml) suya 1/4 çay kaşığı tuz karıştırın ve bununla fırçalayın.</p>
+      <p class="src">Kaynak: K1, K4</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <path d="M46 104V66c0-8 6-12 13-12s13 4 13 12v38zM86 104V64c0-8 6-12 13-12s13 4 13 12v40zM126 104V64c0-8 6-12 13-12s13 4 13 12v40zM166 104V66c0-8 6-12 13-12s13 4 13 12v38z" class="f-tooth fd"/>
+          <path d="M28 132v-16c0-10 8-16 20-16h144c12 0 20 6 20 16v16z" class="f-gum fd"/>
+          <path d="M119 24v74" class="s" style="stroke-dasharray:4 5"/>
+          <text x="120" y="16" class="ta" text-anchor="middle">dişin diş etiyle birleştiği yer</text>
+          <g class="scrub"><g transform="rotate(-30 132 84)"><path d="M114 88v-9M121 88v-9M128 88v-9M135 88v-9M142 88v-9" class="sa"/><rect x="108" y="66" width="40" height="14" rx="5" class="f-soft fd"/><rect x="146" y="69" width="70" height="9" rx="4.5" class="sf"/></g></g>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Nazikçe fırçalayın</h2>
+      <p>Dişlerinizi, diş etlerinizi ve dilinizi nazikçe fırçalayın. Dişin diş etiyle birleştiği yere özen gösterin.</p>
+      <p class="src">Kaynak: K4, K5</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <rect x="110" y="14" width="20" height="10" rx="3" class="sf"/><circle cx="120" cy="78" r="50" class="sf"/>
+          <path d="M120 34v8M164 78h-8M120 122v-8M76 78h8" class="s"/>
+          <path d="M120 78V40" class="sa spin" style="transform-origin:120px 78px"/>
+          <circle cx="120" cy="78" r="4" class="f-accent"/>
+          <text x="186" y="84" class="ta">2-3 dk</text>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>2-3 dakika</h2>
+      <p>Her seferinde 2-3 dakika fırçalayın. Aşağıdaki sayacı kullanabilirsiniz.</p>
+      <p class="src">Kaynak: K4</p>
+      <a class="btn btn-primary" href="#sayac" data-scroll="sayac"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>Sayaca git</a>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <path d="M70 70h56l-6 62H76z" class="f-glass fd"/>
+          <rect x="91" y="18" width="16" height="58" rx="7" class="sf"/>
+          <path d="M94 18V6M99 18V5M104 18V6" class="sa"/>
+          <path d="M138 40c8 4 8 10 0 14M152 34c10 6 10 16 0 22M166 28c12 8 12 22 0 30" class="sw air"/>
+          <text x="140" y="120" class="ta">havada kurusun</text>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Sonrasında</h2>
+      <p>Fırçayı havada kurumaya bırakın. Fırçanızı sık sık yenileyin.</p>
+      <p class="src">Kaynak: K4</p>
+    </div>
+    <div class="dots" aria-hidden="true"></div>
+    <div class="row2"><button class="btn btn-ghost" type="button" data-prev><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg>Önceki</button><button class="btn btn-primary" type="button" data-next>Sonraki<svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button></div>
+  </div>
+
+  <div class="note" id="sayac">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>Fırçalama sayacı</h2>
+    <div class="timer">
+      <div class="ring" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><circle class="trk" cx="100" cy="100" r="88"/><circle class="val" id="tRing" cx="100" cy="100" r="88" stroke-dasharray="552.92" stroke-dashoffset="0"/></svg>
+        <div class="dg" id="tDigits">2:00</div>
+      </div>
+      <p class="vh" id="tLive" aria-live="polite"></p>
+      <div class="row2">
+        <button class="btn btn-primary" type="button" id="tStart"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg><span>Başlat</span></button>
+        <button class="btn btn-ghost" type="button" id="tReset"><svg class="ic" aria-hidden="true"><use href="#i-reset"/></svg>Sıfırla</button>
+      </div>
+      <div id="tDone" class="stack" hidden style="width:100%">
+        <p><strong>Tebrikler, süre tamamlandı.</strong></p>
+        <div class="row2">
+          <button class="btn btn-ghost" type="button" id="tPlus"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>1 dakika daha</button>
+          <button class="btn btn-ok" type="button" data-mark="f"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Takibe işaretle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note warn">
+    <h2>Ağzınızda yara ve ağrı çoksa</h2>
+    <p>Diş fırçası kullanmayın. Steril (mikropsuz) gazlı bezi parmağınıza sarın. Macunla dişlerinizi hırpalamadan ovun. Bu durumu ekibinize de haber verin.</p>
+    <p class="src">Kaynak: K1, K5</p>
+  </div>
+  <div class="note">
+    <h2>Diş ipi</h2>
+    <p>Trombosit (kanın pıhtılaşmasını sağlayan hücre) sayınız yeterliyse, yatmadan önce diş aralarınızı diş ipiyle nazikçe temizleyin. Kanama riskiniz olup olmadığını ekibinize sorun.</p>
+    <p class="src">Kaynak: K1, K5</p>
+  </div>
+  <div class="note">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-tooth"/></svg>Takma diş (protez) kullanıyorsanız</h2>
+    <ul class="list">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Ağzınıza iyi oturduğundan emin olun.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Her yemekten sonra çıkarın ve ağzınızı çalkalayın.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Her gün yumuşak bir fırçayla temizleyin. Sıcak su kullanmayın, şekli bozulabilir.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Geceleri, suyunu her gün değiştirdiğiniz kapaklı bir kapta saklayın.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Ağzınızda yara ve şikâyet fazlaysa, iyileşene kadar takmayın.</span></li>
+    </ul>
+    <p class="src">Kaynak: K1, K4</p>
+  </div>
+</section>
+
+<!-- ================= 3. GARGARA ================= -->
+<section class="screen wrap stack-lg" id="s-gargara" aria-labelledby="h-gargara" hidden>
+  <div class="head">
+    <h1 id="h-gargara" tabindex="-1">Gargara tarifi</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <p class="lead">Karbonatlı su ağızdaki asidi azaltır. Kuruluğu ve yaraları engellemeye yardımcı olur.</p>
+  <div class="pager" data-pager>
+    <div class="step">
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <defs><clipPath id="gc1"><path d="M92 22h56l-6.6 96a5 5 0 0 1-5 4.6h-32.8a5 5 0 0 1-5-4.6z"/></clipPath></defs>
+          <g clip-path="url(#gc1)"><rect x="86" y="44" width="68" height="84" class="f-water fill"/></g>
+          <path d="M90 20h60l-7 99a6 6 0 0 1-6 5.5H103a6 6 0 0 1-6-5.5z" class="fd" style="fill:none"/>
+          <text x="164" y="60" class="ta">1 su</text><text x="164" y="76" class="ta">bardağı</text>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Su</h2>
+      <p>1 su bardağı su alın.</p>
+      <p class="src">Kaynak: K1</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <rect x="8" y="72" width="80" height="56" rx="6" class="f-surface fd"/><text x="48" y="104" text-anchor="middle" style="fill:var(--ink);font:800 10px var(--font)">KARBONAT</text>
+          <defs><clipPath id="gc2"><path d="M112 52h52l-6 66a5 5 0 0 1-5 4.6h-30a5 5 0 0 1-5-4.6z"/></clipPath></defs>
+          <g clip-path="url(#gc2)"><rect x="104" y="62" width="64" height="70" class="f-water"/><ellipse cx="138" cy="84" rx="14" ry="5" class="swirl" style="fill:none;stroke:var(--accent);stroke-width:2.5"/></g>
+          <path d="M110 50h56l-6.5 69a6 6 0 0 1-6 5.5h-31a6 6 0 0 1-6-5.5z" class="fd" style="fill:none"/>
+          <circle cx="152" cy="56" r="2.6" class="f-cream fd fall" style="stroke-width:1"/><circle cx="156" cy="53" r="2.2" class="f-cream fd fall f2" style="stroke-width:1"/><circle cx="148" cy="52" r="2.2" class="f-cream fd fall f3" style="stroke-width:1"/><circle cx="154" cy="59" r="2" class="f-cream fd fall f4" style="stroke-width:1"/>
+          <g class="tip"><ellipse cx="146" cy="30" rx="13" ry="6" class="sf"/><ellipse cx="146" cy="28" rx="8" ry="2.6" class="f-cream"/><path d="M159 29l60-12" class="s" style="stroke-width:4"/></g>
+          <text x="176" y="56" class="ta">1 çay</text><text x="176" y="72" class="ta">kaşığı</text>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Karbonat</h2>
+      <p>Suya 1 çay kaşığı karbonat koyun ve karıştırın.</p>
+      <p class="src">Kaynak: K1</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <circle cx="120" cy="76" r="54" class="sf"/>
+          <circle cx="100" cy="62" r="4" class="fi"/><circle cx="140" cy="62" r="4" class="fi"/>
+          <ellipse cx="86" cy="94" rx="16" ry="14" class="f-water puffL"/><ellipse cx="154" cy="94" rx="16" ry="14" class="f-water puffR"/>
+          <path d="M110 100h20" class="s" style="stroke-width:3"/>
+          <path d="M44 84c-8 4-8 12 0 16M196 84c8 4 8 12 0 16" class="sa air"/>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Çalkalayın</h2>
+      <p>Bu suyla ağzınızı bolca çalkalayın.</p>
+      <p class="src">Kaynak: K1</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" data-fig="meals" aria-hidden="true"></div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Ne zaman?</h2>
+      <p>Yemeklerden sonra ve yatmadan önce.</p>
+      <p class="src">Kaynak: K1</p>
+    </div>
+    <div class="step" hidden>
+      <div class="fig" aria-hidden="true">
+        <svg viewBox="0 0 240 150">
+          <circle cx="120" cy="78" r="54" class="sf"/>
+          <path d="M120 78 120 24a54 54 0 0 1 46.8 27z" class="f-soft"/>
+          <path d="M120 30v6M147 37.2l-3 5.2M166.8 51l-5.2 3M174 78h-6M120 126v-6M66 78h6M73.2 51l5.2 3M93 37.2l3 5.2" class="s"/>
+          <path d="M120 78V36" class="sa hand"/>
+          <circle cx="120" cy="78" r="4.5" class="f-accent"/>
+          <text x="184" y="44" class="ta">2 saat</text>
+        </svg>
+      </div>
+      <p class="stepnum" data-nosay></p>
+      <h2>Şikâyetiniz fazlaysa</h2>
+      <p>Yaralarınız fazlaysa ve beslenemiyorsanız, ağzınızı 2 saatte bir karbonatlı suyla çalkalayın. Doktorunuzun önerdiği gargara ilaçlarını kullanın.</p>
+      <p><strong>Ateşiniz 38 °C veya üzerindeyse ekibinizi hemen arayın.</strong></p>
+      <p class="src">Kaynak: K1, K5</p>
+      <a class="btn btn-danger-ghost" href="#acil"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Acil durumlar</a>
+    </div>
+    <div class="dots" aria-hidden="true"></div>
+    <div class="row2"><button class="btn btn-ghost" type="button" data-prev><svg class="ic" aria-hidden="true"><use href="#i-chev-l"/></svg>Önceki</button><button class="btn btn-primary" type="button" data-next>Sonraki<svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button></div>
+  </div>
+  <button class="btn btn-ok btn-block" type="button" data-mark="g"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Gargara yaptım, takibe işaretle</button>
+  <div class="note warn">
+    <h2>Kullanmayın</h2>
+    <p>Alkollü ve gliserinli hazır gargaraları kullanmayın.</p>
+    <p class="src">Kaynak: K1, K4</p>
+  </div>
+  <div class="note">
+    <h2>Size farklı bir tarif verildiyse</h2>
+    <p>Ekibiniz size başka bir gargara önerdiyse onu kullanın. Hemşirenizden size uygun tarifi yazmasını isteyin.</p>
+    <p class="src">Kaynak: K5</p>
+  </div>
+</section>
+
+<!-- ================= 4. BUNU YİYEBİLİR MİYİM ================= -->
+<section class="screen wrap stack-lg" id="s-yiyecek" aria-labelledby="h-yiyecek" hidden>
+  <div class="head">
+    <h1 id="h-yiyecek" tabindex="-1">Bunu yiyebilir miyim?</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <div id="gPlay" class="stack">
+    <p>Ağzınızda yara veya hassasiyet varken bu yiyecek uygun mu? Karta bakın ve seçin.</p>
+    <div class="progress" data-nosay><span id="gStep">Kart 1 / 12</span><span class="bar" aria-hidden="true"><i id="gBar" style="width:8%"></i></span></div>
+    <div class="food" id="gCard"></div>
+    <div class="row2" id="gBtns">
+      <button class="btn btn-ok btn-xl" type="button" data-ans="1"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Uygun</button>
+      <button class="btn btn-danger btn-xl" type="button" data-ans="0"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Kaçının</button>
+    </div>
+    <div id="gFb" class="fb" hidden aria-live="polite"></div>
+    <button class="btn btn-primary btn-block" type="button" id="gNext" hidden>Sonraki kart<svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+  </div>
+  <div id="gEnd" class="stack" hidden></div>
+</section>
+
+<!-- ================= 5. GÜNLÜK TAKİP ================= -->
+<section class="screen wrap stack-lg" id="s-takip" aria-labelledby="h-takip" hidden>
+  <div class="head">
+    <h1 id="h-takip" tabindex="-1">Günlük takip</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <p>Bugün yaptığınız bakımı işaretleyin.</p>
+  <div class="note">
+    <h2 id="trDate">Bugün</h2>
+    <div id="trSlots" class="stack"></div>
+    <p id="trCount" class="muted small"></p>
+  </div>
+  <div class="note">
+    <h2>Bugünkü ağız durumu</h2>
+    <div id="trCheck"></div>
+  </div>
+  <div class="note">
+    <h2>Bu hafta</h2>
+    <div class="scroll-x" data-nosay><table class="week" id="trWeek"></table></div>
+    <div class="legend" data-nosay>
+      <span><i class="d full"></i>Fırçalama ve gargara</span><span><i class="d half"></i>Biri yapıldı</span><span><i class="d"></i>Yapılmadı</span>
+    </div>
+    <div class="legend" data-nosay>
+      <span><i class="d st-ok"></i>Değişiklik yok</span><span><i class="d st-warn"></i>Değişiklik var</span><span><i class="d st-danger"></i>Hemen arama</span>
+    </div>
+  </div>
+  <div class="note soft">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Kayıtlarınız size ait</h2>
+    <p>Bu kayıtlar yalnızca bu telefonda saklanır, hiçbir yere gönderilmez. Kontrollerde hemşirenize gösterebilirsiniz.</p>
+    <p class="muted small" id="trStoreWarn" hidden>Bu tarayıcı kayıt tutmaya izin vermiyor. İşaretlemeler sayfa kapanınca silinir.</p>
+  </div>
+  <div class="stack" data-nosay>
+    <button class="btn btn-danger-ghost" type="button" id="trClear"><svg class="ic" aria-hidden="true"><use href="#i-trash"/></svg>Tüm kayıtları sil</button>
+    <div class="note warn" id="trConfirm" hidden>
+      <p><strong>Tüm işaretlemeler ve sonuçlar silinsin mi?</strong> Bu işlem geri alınamaz.</p>
+      <div class="row2"><button class="btn btn-danger" type="button" id="trYes">Evet, sil</button><button class="btn btn-ghost" type="button" id="trNo">Vazgeç</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. ÖĞRENDİKLERİMİ ANLATAYIM ================= -->
+<section class="screen wrap stack-lg" id="s-test" aria-labelledby="h-test" hidden>
+  <div class="head">
+    <h1 id="h-test" tabindex="-1">Öğrendiklerimi anlatayım</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <div id="tbMenu" class="stack">
+    <p>Teach-back (öğrendiğini kendi cümleleriyle anlatma): Hemşireniz soruyu sorar, siz kendi cümlelerinizle anlatırsınız. Hemşireniz eksik kalan yeri tekrar anlatır.</p>
+    <button class="btn btn-primary btn-xl btn-block" type="button" id="tbStart"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Hemşiremle başla</button>
+    <button class="btn btn-ghost btn-block" type="button" id="qzStart">Kendi kendime dene (doğru mu, yanlış mı?)</button>
+    <div id="tbLast"></div>
+  </div>
+  <div id="tbRun" class="stack" hidden>
+    <div class="progress" data-nosay><span id="tbStep">Soru 1 / 5</span><span class="bar" aria-hidden="true"><i id="tbBar" style="width:20%"></i></span></div>
+    <p class="qbig" id="tbQ"></p>
+    <details class="keys" data-nosay><summary>Hemşire için: beklenen noktalar</summary><ul id="tbKeys"></ul></details>
+    <div class="stack" data-nosay>
+      <button class="btn btn-ok btn-block" type="button" data-tb="ok">Doğru anlattı</button>
+      <button class="btn btn-ghost btn-block" type="button" data-tb="re">Tekrar anlatıldı, şimdi doğru</button>
+      <button class="btn btn-danger-ghost btn-block" type="button" data-tb="gap">Hâlâ eksik</button>
+    </div>
+  </div>
+  <div id="tbEnd" class="stack" hidden></div>
+  <div id="qzRun" class="stack" hidden>
+    <div class="progress" data-nosay><span id="qzStep">Soru 1 / 5</span><span class="bar" aria-hidden="true"><i id="qzBar" style="width:20%"></i></span></div>
+    <p class="muted">Doğru mu, yanlış mı?</p>
+    <p class="qbig" id="qzS"></p>
+    <div class="row2" id="qzBtns">
+      <button class="btn btn-ok btn-xl" type="button" data-qz="1"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Doğru</button>
+      <button class="btn btn-danger btn-xl" type="button" data-qz="0"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>Yanlış</button>
+    </div>
+    <div id="qzFb" class="fb" hidden aria-live="polite"></div>
+    <button class="btn btn-primary btn-block" type="button" id="qzNext" hidden>Sonraki soru<svg class="ic" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+  </div>
+  <div id="qzEnd" class="stack" hidden></div>
+</section>
+
+<!-- ================= 7. ACİL DURUMLAR ================= -->
+<section class="screen wrap stack-lg" id="s-acil" aria-labelledby="h-acil" hidden>
+  <div class="head">
+    <h1 id="h-acil" tabindex="-1">Acil durumlar</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <div class="callbox">
+    <h2>Randevu gününü beklemeden hemen arayın</h2>
+    <a class="btn btn-danger btn-xl btn-block" data-call href="#acil"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Servisi ara</a>
+    <div class="numrow"><span class="num" data-num></span><button class="tb" type="button" data-copy><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg>Kopyala</button></div>
+    <p>Servise ulaşamazsanız 112'yi arayın.</p>
+    <a class="btn btn-danger-ghost btn-block" href="tel:112"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>112'yi ara</a>
+  </div>
+  <div class="note">
+    <h2>Şu durumlarda hemen arayın</h2>
+    <ul class="list red">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-thermo"/></svg><span>38 °C veya üzerinde ateş</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-drop"/></svg><span>Herhangi bir yerinizde kanama veya diş etlerinizde aşırı kanama</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><span>Yeni başlayan nefes darlığı veya var olan nefes darlığınızın artması</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-mouth"/></svg><span>Yemek yemenizi engelleyen ağız yaraları ve yutma güçlüğü</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><span>Ağzınızda, dudaklarınızda veya boğazınızda yemenizi, içmenizi ya da uyumanızı zorlaştıran ağrı</span></li>
+    </ul>
+    <p class="src">Kaynak: K1, K5</p>
+  </div>
+  <div class="note">
+    <h2>Fark ettiğinizde ekibinize söyleyin</h2>
+    <ul class="list">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Ağızda beyaz lekeler veya pamukçuk (kandidiyazis, ağızda mantar enfeksiyonu)</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Ağzınızda yeni yara, ağrı veya hassasiyet</span></li>
+    </ul>
+    <p class="src">Kaynak: K5, K1</p>
+  </div>
+</section>
+
+<!-- ================= KAYNAKLAR ================= -->
+<section class="screen wrap stack-lg" id="s-kaynaklar" aria-labelledby="h-kaynaklar" hidden>
+  <div class="head">
+    <h1 id="h-kaynaklar" tabindex="-1">Kaynaklar</h1>
+    <button class="speak" type="button" data-speak aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg><span class="lbl">Sesli dinle</span></button>
+  </div>
+  <p>Bu uygulamadaki bilgiler yalnızca aşağıdaki kaynaklara dayanır. Metinlerdeki "Kaynak: K1" gibi notlar bu listeyi gösterir.</p>
+  <ol class="refs">
+    <li><b>K1</b> · T.C. Sağlık Bakanlığı Gaziantep Şehir Hastanesi. Kemoterapi Ünitesi Hasta Bilgilendirme Rehberi (KH.RH.01, Rev. 03). Yayın 14.03.2024, revizyon 05.01.2026. https://gaziantepsehir.saglik.gov.tr/TR-1532949/kemoterapi-unitesi-hasta-bilgilendirme-rehberi.html</li>
+    <li><b>K2</b> · World Health Organization. WHO Handbook for Reporting Results of Cancer Treatment. WHO Offset Publication No. 48. Cenevre: WHO; 1979. Tablo I, oral toksisite derecelendirmesi (0-4).</li>
+    <li><b>K3</b> · Elad S, Cheng KKF, Lalla RV, ve ark. MASCC/ISOO clinical practice guidelines for the management of mucositis secondary to cancer therapy. Cancer. 2020;126(19):4423-4431. https://doi.org/10.1002/cncr.33100</li>
+    <li><b>K4</b> · National Cancer Institute. Oral Complications of Cancer Therapies (PDQ®), Patient Version. Güncelleme 15.10.2024. https://www.cancer.gov/about-cancer/treatment/side-effects/mouth-throat/oral-complications-pdq</li>
+    <li><b>K5</b> · National Cancer Institute. Mouth and Throat Problems: Cancer Treatment Side Effects. Gözden geçirme 24.09.2021. https://www.cancer.gov/about-cancer/treatment/side-effects/mouth-throat</li>
+  </ol>
+  <div class="note">
+    <h2>Seçimler</h2>
+    <ul class="list">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Kaynaklar arasında farklılık olduğunda T.C. Sağlık Bakanlığı kaynağı (K1) esas alınmıştır: gargara tarifi, yara ve ağrı çokken gazlı bezle temizlik.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Ateş sınırı için daha güvenli olan "38 °C ve üzeri" (K5) kullanılmıştır.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Diş macunu önerisi K1 ve K4 birlikte kullanılarak yazılmıştır.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>"Bugün ağzım nasıl?" bölümü DSÖ ölçeğinin (K2) hasta için basitleştirilmiş hâlidir. Tanı koymaz.</span></li>
+    </ul>
+  </div>
+  <div class="note soft">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Gizlilik</h2>
+    <p>Uygulama internete bilgi göndermez. Reklam ve takip içermez. İşaretlemeleriniz yalnızca bu telefonun tarayıcısında saklanır.</p>
+  </div>
+  <p class="muted small">Sürüm: Ekim 2026. Hemşirelik öğrencisi hasta eğitimi projesi.</p>
+</section>
+</main>
+
+<footer class="foot">
+  <p><strong>Bu uygulama genel bilgi verir, size özel öneriler için tedavi ekibinize danışın.</strong></p>
+  <p>Kaynaklar: T.C. Sağlık Bakanlığı Gaziantep Şehir Hastanesi (K1), DSÖ (K2), MASCC/ISOO 2020 (K3), ABD Ulusal Kanser Enstitüsü (K4, K5). <a href="#kaynaklar">Kaynakların tamamı</a></p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ===== AYAR: Servis telefonunu buraya yazın. Örnek: '0 342 000 00 00' ===== */
+  var SERVIS_TELEFONU = '[SERVİS TELEFONU]';
+
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function icon(id, cls) { return '<svg class="ic' + (cls ? ' ' + cls : '') + '" aria-hidden="true"><use href="#' + id + '"/></svg>'; }
+
+  /* ===== Depolama (yalnızca bu cihazda) ===== */
+  var KEY = 'agizBakimi.v1';
+  var storeOk = true;
+  var db = {};
+  try { db = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { storeOk = false; db = {}; }
+  if (!db.days || typeof db.days !== 'object') db.days = {};
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(db)); storeOk = true; } catch (e) { storeOk = false; } }
+
+  function dayKey(d) { d = d || new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function today() { var k = dayKey(); if (!db.days[k]) db.days[k] = {}; return db.days[k]; }
+  var SLOTS = [['sabah', 'Sabah'], ['ogle', 'Öğle'], ['aksam', 'Akşam'], ['gece', 'Yatmadan önce']];
+  function slotName(id) { for (var i = 0; i < SLOTS.length; i++) if (SLOTS[i][0] === id) return SLOTS[i][1]; return ''; }
+  function currentSlot() { var h = new Date().getHours(); if (h >= 5 && h < 11) return 'sabah'; if (h >= 11 && h < 16) return 'ogle'; if (h >= 16 && h < 21) return 'aksam'; return 'gece'; }
+
+  /* ===== Bildirim ===== */
+  var toastEl = $('#toast'), toastT;
+  function toast(msg) { toastEl.textContent = msg; toastEl.hidden = false; clearTimeout(toastT); toastT = setTimeout(function () { toastEl.hidden = true; }, 4500); }
+
+  /* ===== Yazı boyutu ===== */
+  var sizeBtn = $('#sizeBtn');
+  function applySize() { document.documentElement.classList.toggle('lg', !!db.lg); sizeBtn.setAttribute('aria-pressed', db.lg ? 'true' : 'false'); }
+  sizeBtn.addEventListener('click', function () { db.lg = !db.lg; save(); applySize(); });
+  applySize();
+
+  /* ===== Sesli dinle (tarayıcının Türkçe konuşma özelliği) ===== */
+  var synth = window.speechSynthesis || null;
+  var trVoice = null, speakingBtn = null, speakRun = 0;
+  function pickVoice() {
+    if (!synth) return 0;
+    var vs = synth.getVoices() || [];
+    trVoice = null;
+    for (var i = 0; i < vs.length; i++) {
+      if (/^tr([-_]|$)/i.test(vs[i].lang)) { if (!trVoice || vs[i].localService) trVoice = vs[i]; }
+    }
+    return vs.length;
+  }
+  if (synth) { pickVoice(); try { synth.addEventListener('voiceschanged', pickVoice); } catch (e) { synth.onvoiceschanged = pickVoice; } }
+
+  function forSpeech(t) {
+    return t.replace(/°\s?C/g, ' derece')
+      .replace(/(\d+)\s*[-–]\s*(\d+)/g, '$1 ile $2')
+      .replace(/\b112\b/g, 'bir bir iki')
+      .replace(/1\/4/g, 'çeyrek')
+      .replace(/\s+/g, ' ').trim();
+  }
+  function visible(el) { return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length); }
+  function readableText(screen) {
+    var SEL = 'h1,h2,h3,p,li,.say';
+    var out = [];
+    $$(SEL, screen).forEach(function (el) {
+      if (!visible(el)) return;
+      if (el.closest('[data-nosay],.src')) return;
+      if (el.parentElement && el.parentElement.closest(SEL)) return;
+      var t = (el.innerText || el.textContent || '').trim();
+      if (t) out.push(/[.!?:]$/.test(t) ? t : t + '.');
+    });
+    return out.join(' ');
+  }
+  function setSpeakBtn(btn, on) {
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.querySelector('.lbl').textContent = on ? 'Durdur' : 'Sesli dinle';
+    btn.querySelector('use').setAttribute('href', on ? '#i-stop' : '#i-speaker');
+  }
+  function stopSpeech() {
+    speakRun++;
+    if (synth) { try { synth.cancel(); } catch (e) {} }
+    setSpeakBtn(speakingBtn, false);
+    speakingBtn = null;
+  }
+  function speakText(text, btn) {
+    stopSpeech();
+    var parts = forSpeech(text).replace(/([.!?:;])\s+/g, '$1\n').split('\n').filter(function (s) { return s.trim(); });
+    if (!parts.length) return;
+    var run = ++speakRun;
+    speakingBtn = btn; setSpeakBtn(btn, true);
+    parts.forEach(function (p, i) {
+      var u = new SpeechSynthesisUtterance(p);
+      u.lang = 'tr-TR'; if (trVoice) u.voice = trVoice; u.rate = 0.9;
+      if (i === parts.length - 1) {
+        u.onend = function () { if (run === speakRun) { setSpeakBtn(btn, false); speakingBtn = null; } };
+      }
+      u.onerror = function () { if (run === speakRun) { setSpeakBtn(btn, false); speakingBtn = null; } };
+      synth.speak(u);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-speak]');
+    if (!b) return;
+    if (speakingBtn === b) { stopSpeech(); return; }
+    if (!synth || !window.SpeechSynthesisUtterance) { toast('Bu tarayıcı sesli okumayı desteklemiyor. Chrome veya Safari ile açmayı deneyin.'); return; }
+    var n = pickVoice();
+    if (n > 0 && !trVoice) toast('Telefonunuzda Türkçe okuma sesi bulunamadı. Telefon ayarlarından Türkçe metin okuma sesini ekleyebilirsiniz.');
+    speakText(readableText(b.closest('.screen')), b);
+  });
+
+  /* ===== Ekranlar arasında geçiş ===== */
+  var ROUTES = ['ana', 'kontrol', 'fircalama', 'gargara', 'yiyecek', 'takip', 'test', 'acil', 'kaynaklar'];
+  var current = null;
+  function routeFromHash() { var h = (location.hash || '').replace('#', ''); return ROUTES.indexOf(h) >= 0 ? h : null; }
+  function render(r, focus) {
+    if (r === current) return;
+    stopSpeech();
+    toastEl.hidden = true;
+    current = r;
+    ROUTES.forEach(function (id) { $('#s-' + id).hidden = id !== r; });
+    $('#homeBtn').hidden = r === 'ana';
+    $('.brand span').hidden = r !== 'ana';
+    $('#sosBtn').hidden = r === 'acil';
+    if (r === 'takip') renderTrack();
+    if (r === 'test') showTbMenu();
+    window.scrollTo(0, 0);
+    if (focus) { var h = $('#s-' + r + ' h1'); if (h) { try { h.focus({ preventScroll: true }); } catch (e) { h.focus(); } } }
+  }
+  window.addEventListener('hashchange', function () {
+    var r = routeFromHash();
+    if (r) render(r, true);
+  });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-scroll]');
+    if (!a) return;
+    e.preventDefault();
+    var t = document.getElementById(a.getAttribute('data-scroll'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  /* ===== Ortak çizim: öğünler ve gece ===== */
+  var MEALS = '<svg viewBox="0 0 240 150">' +
+    [30, 90, 150].map(function (x, i) {
+      return '<g class="pulse' + (i ? ' p' + (i + 1) : '') + '"><circle cx="' + x + '" cy="62" r="24" class="sf"/><circle cx="' + x + '" cy="62" r="14" class="s"/></g>';
+    }).join('') +
+    '<g class="pulse p4"><path d="M216 40a24 24 0 1 0 0 44 18 18 0 1 1 0-44z" class="f-banana fd"/></g>' +
+    '<text x="30" y="112" class="t" text-anchor="middle">Kahvaltı</text><text x="90" y="112" class="t" text-anchor="middle">Öğle</text>' +
+    '<text x="150" y="112" class="t" text-anchor="middle">Akşam</text><text x="210" y="112" class="t" text-anchor="middle">Yatarken</text></svg>';
+  $$('[data-fig="meals"]').forEach(function (el) { el.innerHTML = MEALS; });
+
+  /* ===== Adım adım anlatım ===== */
+  $$('[data-pager]').forEach(function (pg) {
+    var steps = $$('.step', pg), i = 0, dots = $('.dots', pg);
+    dots.innerHTML = steps.map(function () { return '<i></i>'; }).join('');
+    var prev = $('[data-prev]', pg), next = $('[data-next]', pg);
+    function show() {
+      steps.forEach(function (s, k) { s.hidden = k !== i; var n = $('.stepnum', s); if (n) n.textContent = 'Adım ' + (k + 1) + ' / ' + steps.length; });
+      $$('i', dots).forEach(function (d, k) { d.className = k === i ? 'on' : ''; });
+      prev.disabled = i === 0; next.disabled = i === steps.length - 1;
+    }
+    prev.addEventListener('click', function () { if (i > 0) { i--; stopSpeech(); show(); } });
+    next.addEventListener('click', function () { if (i < steps.length - 1) { i++; stopSpeech(); show(); } });
+    show();
+  });
+
+  /* ===== Takibe işaretleme ===== */
+  function mark(kind) {
+    var t = today(), s = currentSlot();
+    t[s] = t[s] || {};
+    t[s][kind] = true;
+    save();
+    toast(slotName(s) + ': ' + (kind === 'f' ? 'diş fırçalama' : 'gargara') + ' işaretlendi.');
+  }
+  document.addEventListener('click', function (e) { var b = e.target.closest('[data-mark]'); if (b) mark(b.getAttribute('data-mark')); });
+
+  /* ===== 1. Bugün ağzım nasıl? ===== */
+  var QS = [
+    { id: 'pain', text: 'Ağzınızda ağrı veya hassasiyet var mı?', opts: [['no', 'Yok', 'o-face-ok'], ['yes', 'Var', 'o-face-pain']] },
+    { id: 'lesion', text: 'Ağzınızda kızarıklık veya yara var mı?', opts: [['none', 'Yok', 'o-mouth'], ['red', 'Kızarıklık var', 'o-mouth-red'], ['ulcer', 'Yara var', 'o-mouth-ulcer']] },
+    { id: 'food', text: 'Bugün ne yiyip içebiliyorsunuz?', opts: [['solid', 'Katı yiyecekleri yiyebiliyorum', 'o-plate'], ['liquid', 'Sadece sıvı alabiliyorum', 'o-cup'], ['none', 'Hiçbir şey yiyip içemiyorum', 'o-cup-x']] },
+    { id: 'fever', text: 'Ateşiniz 38 °C veya üzerinde mi?', opts: [['no', 'Hayır', 'o-thermo-low'], ['yes', 'Evet, 38 °C veya üzerinde', 'o-thermo-high'], ['unknown', 'Ölçmedim', 'o-thermo-q']] }
+  ];
+  var WHO = ['Değişiklik yok', 'Ağrı/hassasiyet, kızarıklık (eritem)', 'Kızarıklık, yaralar (ülser); katı yiyebiliyor', 'Yaralar; yalnızca sıvı beslenebiliyor', 'Ağızdan beslenme mümkün değil'];
+  var ans = {}, qi = 0;
+  function renderQ() {
+    var q = QS[qi];
+    $('#chkStep').textContent = 'Soru ' + (qi + 1) + ' / ' + QS.length;
+    $('#chkBar').style.width = ((qi + 1) / QS.length * 100) + '%';
+    $('#chkText').textContent = q.text;
+    $('#chkOpts').innerHTML = q.opts.map(function (o) {
+      return '<button class="opt" type="button" data-v="' + o[0] + '" aria-pressed="' + (ans[q.id] === o[0]) + '"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#' + o[2] + '"/></svg><span class="say">' + esc(o[1]) + '</span></button>';
+    }).join('');
+    $('#chkBack').hidden = qi === 0;
+  }
+  $('#chkOpts').addEventListener('click', function (e) {
+    var b = e.target.closest('.opt'); if (!b) return;
+    stopSpeech();
+    ans[QS[qi].id] = b.getAttribute('data-v');
+    $$('.opt', this).forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+    setTimeout(function () {
+      if (qi < QS.length - 1) { qi++; renderQ(); var h = $('#chkText'); h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); window.scrollTo(0, 0); }
+      else showResult();
+    }, 220);
+  });
+  $('#chkBack').addEventListener('click', function () { if (qi > 0) { stopSpeech(); qi--; renderQ(); } });
+
+  function gradeOf(a) {
+    if (a.food === 'none') return 4;
+    if (a.food === 'liquid') return 3;
+    if (a.lesion === 'ulcer') return 2;
+    if (a.lesion === 'red' || a.pain === 'yes') return 1;
+    return 0;
+  }
+  function showResult() {
+    var g = gradeOf(ans);
+    var level = (ans.fever === 'yes' || g >= 3) ? 'danger' : (g >= 1 ? 'warn' : 'ok');
+    var html = '';
+    if (level === 'ok') {
+      html += '<div class="result ok"><div class="rh"><span class="ri">' + icon('i-check') + '</span><h2>Bugün ağzınızda bir değişiklik görünmüyor</h2></div>' +
+        '<p>Ağız bakımınıza devam edin. Ağzınızı her gün yara veya beyaz leke yönünden kontrol edin.</p>' +
+        '<p class="src">Kaynak: K5</p>';
+    } else if (level === 'warn') {
+      html += '<div class="result warn"><div class="rh"><span class="ri">' + icon('i-info') + '</span><h2>Ağzınızda değişiklik var</h2></div>' +
+        '<p>Ağrı, hassasiyet veya yara gibi bir değişiklik fark ettiğinizde bunu hemen doktorunuza veya hemşirenize söyleyin. Ağız bakımınıza devam edin.</p>' +
+        '<p class="src">Kaynak: K5</p>' +
+        '<a class="btn btn-ghost btn-block" data-call href="#acil">' + icon('i-phone') + 'Ekibe haber ver</a>';
+    } else {
+      var why = [];
+      if (ans.fever === 'yes') why.push('Ateşiniz 38 °C veya üzerinde.');
+      if (g === 4) why.push('Hiçbir şey yiyip içemiyorsunuz.');
+      if (g === 3) why.push('Katı yiyecek yiyemiyorsunuz.');
+      html += '<div class="result danger"><div class="rh"><span class="ri">' + icon('i-phone') + '</span><h2>Randevu gününü beklemeden hemen ekibinizi arayın</h2></div>' +
+        '<p>' + why.map(esc).join(' ') + '</p>' +
+        '<p class="src">Kaynak: K1, K5</p>' +
+        '<a class="btn btn-danger btn-xl btn-block" data-call href="#acil">' + icon('i-phone') + 'Servisi ara</a>' +
+        '<p class="small">Servise ulaşamazsanız 112\'yi arayın.</p>';
+    }
+    if (ans.fever === 'unknown') html += '<p><strong>Ateşinizi ölçün.</strong> 38 °C veya üzerindeyse ekibinizi hemen arayın.</p><p class="src">Kaynak: K5</p>';
+    html += '<p><strong>Bu sonuç bir tanı değildir.</strong> Sonucu sağlık ekibinizle paylaşın.</p>' +
+      '<p class="nurse" data-nosay>Hemşireniz için: Yanıtlar DSÖ oral mukozit ölçeğinde derece ' + g + ' ile uyumlu olabilir (' + esc(WHO[g]) + '). Kaynak: K2</p></div>';
+    html += '<p class="muted small" data-nosay>Sonuç bugünkü takibinize kaydedildi.</p>' +
+      '<div class="row2"><button class="btn btn-ghost" type="button" id="chkAgain">' + icon('i-reset') + 'Yeniden yap</button><a class="btn btn-primary" href="#ana">' + icon('i-home') + 'Ana sayfa</a></div>';
+    var t = today();
+    var d = new Date();
+    t.check = { grade: g, level: level, time: pad(d.getHours()) + ':' + pad(d.getMinutes()) };
+    save();
+    $('#chkQ').hidden = true;
+    var r = $('#chkR'); r.innerHTML = html; r.hidden = false;
+    bindPhones(r);
+    window.scrollTo(0, 0);
+    $('#chkAgain').addEventListener('click', function () { stopSpeech(); ans = {}; qi = 0; renderQ(); $('#chkR').hidden = true; $('#chkQ').hidden = false; });
+  }
+  renderQ();
+
+  /* ===== 2. Fırçalama sayacı ===== */
+  var C = 2 * Math.PI * 88;
+  var T = { total: 120, left: 120, run: false, end: 0, iv: null, half: false, lock: null, ctx: null };
+  var tRing = $('#tRing'), tDigits = $('#tDigits'), tStartBtn = $('#tStart'), tLive = $('#tLive');
+  tRing.setAttribute('stroke-dasharray', C.toFixed(2));
+  function fmt(s) { s = Math.max(0, Math.ceil(s)); return Math.floor(s / 60) + ':' + pad(s % 60); }
+  function tDraw() { tDigits.textContent = fmt(T.left); tRing.style.strokeDashoffset = (C * (1 - Math.max(0, T.left) / T.total)).toFixed(2); }
+  function tLabel() { tStartBtn.querySelector('span').textContent = T.run ? 'Duraklat' : (T.left < T.total && T.left > 0 ? 'Devam et' : 'Başlat'); tStartBtn.querySelector('use').setAttribute('href', T.run ? '#i-pause' : '#i-play'); }
+  function lockOn() { try { if (navigator.wakeLock) navigator.wakeLock.request('screen').then(function (l) { T.lock = l; }).catch(function () {}); } catch (e) {} }
+  function lockOff() { try { if (T.lock) T.lock.release(); } catch (e) {} T.lock = null; }
+  function audioUnlock() { try { var A = window.AudioContext || window.webkitAudioContext; if (!A) return; if (!T.ctx) T.ctx = new A(); if (T.ctx.state === 'suspended') T.ctx.resume(); } catch (e) {} }
+  function chime() {
+    try {
+      var ctx = T.ctx; if (!ctx) return;
+      [660, 880, 990].forEach(function (f, i) {
+        var o = ctx.createOscillator(), g = ctx.createGain(), t0 = ctx.currentTime + i * 0.32;
+        o.type = 'sine'; o.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(0.22, t0 + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.6);
+        o.connect(g); g.connect(ctx.destination); o.start(t0); o.stop(t0 + 0.65);
+      });
+    } catch (e) {}
+    try { if (navigator.vibrate) navigator.vibrate([200, 100, 200]); } catch (e) {}
+  }
+  function tTick() {
+    T.left = (T.end - Date.now()) / 1000;
+    if (!T.half && T.left <= T.total / 2) { T.half = true; tLive.textContent = 'Yarısı tamamlandı.'; }
+    if (T.left <= 0) { T.left = 0; tPause(); tDraw(); chime(); tLive.textContent = 'Süre tamamlandı.'; $('#tDone').hidden = false; return; }
+    tDraw();
+  }
+  function tStart() { if (T.left <= 0) { T.left = T.total; T.half = false; } audioUnlock(); T.run = true; T.end = Date.now() + T.left * 1000; clearInterval(T.iv); T.iv = setInterval(tTick, 200); $('#tDone').hidden = true; lockOn(); tLabel(); }
+  function tPause() { T.run = false; clearInterval(T.iv); lockOff(); tLabel(); }
+  function tReset() { tPause(); T.total = 120; T.left = 120; T.half = false; $('#tDone').hidden = true; tLive.textContent = ''; tDraw(); tLabel(); }
+  tStartBtn.addEventListener('click', function () { if (T.run) tPause(); else tStart(); });
+  $('#tReset').addEventListener('click', tReset);
+  $('#tPlus').addEventListener('click', function () { T.total = 60; T.left = 60; T.half = true; tDraw(); tStart(); });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && T.run) lockOn(); });
+  tDraw();
+
+  /* ===== 4. Bunu yiyebilir miyim? ===== */
+  var FIG = {
+    pure: '<path d="M16 50h64a32 24 0 0 1-64 0z" class="sf"/><path d="M24 50c2-11 12-17 24-17s22 6 24 17z" class="f-cream fd"/><rect x="43" y="31" width="10" height="7" rx="2" class="f-banana fd" transform="rotate(-12 48 34)"/>',
+    sutlac: '<path d="M18 44c0 18 13 30 30 30s30-12 30-30z" class="sf"/><ellipse cx="48" cy="44" rx="30" ry="8" class="f-cream fd"/><path d="M60 40 76 18" class="s" style="stroke-width:4"/>',
+    muhallebi: '<path d="M24 50h48l-6 24H30z" class="sf"/><path d="M26 50c2-12 11-17 22-17s20 5 22 17z" class="f-cream fd"/><path d="M40 40c3-2 6-2 9 0" class="s"/>',
+    muz: '<path d="M22 32c5 23 21 36 46 32 7-1 11-4 13-8-5 2-11 3-17 2-17-2-29-12-35-26-1-3-5-3-7 0z" class="f-banana fd"/><path d="M22 32l-4-8" class="s" style="stroke-width:4"/>',
+    yumurta: '<ellipse cx="48" cy="44" rx="15" ry="19" class="f-cream fd"/><path d="M30 56h36l-5 18H35z" class="sf"/><path d="M38 74h20v6H38z" class="sf"/>',
+    patates: '<path d="M18 50c0-13 13-22 29-22s31 7 31 20-13 22-31 22-29-7-29-20z" class="f-potato fd"/><circle cx="36" cy="44" r="1.8" class="fi"/><circle cx="56" cy="40" r="1.8" class="fi"/><circle cx="62" cy="56" r="1.8" class="fi"/><circle cx="42" cy="58" r="1.8" class="fi"/>',
+    makarna: '<path d="M14 48h68a34 24 0 0 1-68 0z" class="sf"/><path d="M24 44c4-6 8 6 12 0s8 6 12 0 8 6 12 0 8 6 12 0" class="f-pasta"/><path d="M28 38c4-6 8 6 12 0s8 6 12 0 8 6 12 0" class="f-pasta"/>',
+    peynir: '<path d="M16 46l40-14 24 9v24L40 79l-24-9z" class="f-cream fd"/><path d="M16 46l24 9 40-14M40 55v24" class="s"/>',
+    limon: '<path d="M16 50c0-15 14-26 32-26s32 11 32 26-14 26-32 26-32-11-32-26z" class="f-lemon fd"/><path d="M16 50h-6M80 50h6" class="s" style="stroke-width:4"/><path d="M48 24c4-8 12-10 18-8-2 6-10 10-18 8z" class="f-leaf fd"/>',
+    portakal: '<path d="M26 22h36l-5 54H31z" class="f-glass fd"/><path d="M28.6 36h30.8l-3.8 38H32.4z" class="f-orange"/><circle cx="64" cy="24" r="11" class="f-orange fd"/><path d="M64 13v22M53 24h22M56.5 16.5l15 15M71.5 16.5l-15 15" class="s" style="stroke-width:1.5"/>',
+    domates: '<path d="M22 22h36l-5 54H27z" class="f-glass fd"/><path d="M24.6 36h30.8l-3.8 38H28.4z" class="f-tomato"/><circle cx="68" cy="62" r="14" class="f-tomato fd"/><path d="M62 49c3 2 6 2 12 0M68 48v-5" class="s"/>',
+    cips: '<path d="M14 58c8-12 22-14 30-7-8 10-22 12-30 7z" class="f-chips fd"/><path d="M40 44c10-10 24-9 30-1-10 8-24 8-30 1z" class="f-chips fd"/><path d="M44 70c8-11 22-12 30-5-9 9-22 10-30 5z" class="f-chips fd"/><path d="M28 32c8-9 20-8 26-1-9 7-20 7-26 1z" class="f-chips fd"/>',
+    kraker: '<rect x="22" y="22" width="52" height="52" rx="5" class="f-bread fd"/><g class="fi"><circle cx="36" cy="36" r="2"/><circle cx="48" cy="36" r="2"/><circle cx="60" cy="36" r="2"/><circle cx="36" cy="48" r="2"/><circle cx="48" cy="48" r="2"/><circle cx="60" cy="48" r="2"/><circle cx="36" cy="60" r="2"/><circle cx="48" cy="60" r="2"/><circle cx="60" cy="60" r="2"/></g>',
+    tost: '<path d="M24 78V46c-7-2-9-9-7-14 3-8 14-12 31-12s28 4 31 12c2 5 0 12-7 14v32z" class="f-bread fd"/><path d="M31 72V43c-5-2-6-6-5-9 2-5 10-8 22-8s20 3 22 8c1 3 0 7-5 9v29z" class="f-cream"/>',
+    biber: '<path d="M66 28c-4 19-15 35-38 45-5 2-7-2-3-5 17-12 25-25 29-41z" class="f-pepper fd"/><path d="M58 26c2-7 9-9 14-6-1 5-6 8-14 6z" class="f-leaf fd"/>',
+    tursu: '<rect x="26" y="30" width="44" height="48" rx="9" class="f-glass fd"/><rect x="28" y="20" width="40" height="11" rx="3" class="f-lid fd"/><rect x="34" y="42" width="10" height="30" rx="5" class="f-pickle fd"/><rect x="50" y="38" width="10" height="34" rx="5" class="f-pickle fd"/>',
+    cay: '<path d="M36 24h24c0 9-7 13-7 23s7 14 7 23H36c0-9 7-13 7-23s-7-14-7-23z" class="f-tea fd"/><ellipse cx="48" cy="74" rx="22" ry="5" class="sf"/><path d="M42 18c-3-4 3-6 0-10" class="sd steam" style="stroke-width:3"/><path d="M50 18c-3-4 3-6 0-10" class="sd steam s2" style="stroke-width:3"/><path d="M58 18c-3-4 3-6 0-10" class="sd steam s3" style="stroke-width:3"/>',
+    havuc: '<path d="M26 72 62 36c5-5 12 2 7 7L33 79c-3 3-10-3-7-7z" class="f-carrot fd"/><path d="M66 34c2-8 6-12 12-12-1 6-5 10-12 12zM66 34c8-2 14 0 16 5-6 2-12 0-16-5z" class="f-leaf fd"/><path d="M40 62l4 4M48 54l4 4" class="s"/>',
+    greyfurt: '<circle cx="48" cy="50" r="26" class="f-grapefruit fd"/><circle cx="48" cy="50" r="19" class="f-cream"/><path d="M48 31v38M29 50h38M34.6 36.6l26.8 26.8M61.4 36.6 34.6 63.4" class="s" style="stroke:var(--grapefruit);stroke-width:2.5"/>',
+    alkol: '<path d="M32 18h32c0 18-7 28-16 28S32 36 32 18z" class="f-glass fd"/><path d="M34 26h28c-1 10-6 16-14 16s-13-6-14-16z" class="f-wine"/><path d="M48 46v26M36 76h24" class="s" style="stroke-width:3"/>'
+  };
+  var FOODS = [
+    { id: 'pure', name: 'Patates püresi', ok: true, why: 'Yumuşak ve kolay yutulur.', src: 'K1' },
+    { id: 'sutlac', name: 'Sütlaç', ok: true, why: 'Yumuşak bir tatlıdır, kolay yutulur.', src: 'K1' },
+    { id: 'muhallebi', name: 'Muhallebi', ok: true, why: 'Muhallebi ve puding gibi yumuşak tatlılar uygundur.', src: 'K1' },
+    { id: 'muz', name: 'Muz', ok: true, why: 'Yumuşak bir meyvedir. Ekşi meyvelerin yerine seçilebilir.', src: 'K1' },
+    { id: 'yumurta', name: 'Yumuşak yumurta', ok: true, why: 'Yumuşak kıvamda pişmiş yumurta uygundur.', src: 'K1' },
+    { id: 'patates', name: 'Haşlanmış patates', ok: true, why: 'Yumuşak ve kolay yutulur.', src: 'K1' },
+    { id: 'makarna', name: 'Makarna', ok: true, why: 'Yumuşak bir yiyecektir.', src: 'K1' },
+    { id: 'peynir', name: 'Yumuşak peynir', ok: true, why: 'Yumuşak peynir uygundur. Tuzlu peynirden kaçının.', src: 'K1' },
+    { id: 'limon', name: 'Limon', ok: false, why: 'Ekşidir. Ağzınızda yara varken limon ve ekşi meyvelerden kaçının.', src: 'K1' },
+    { id: 'portakal', name: 'Portakal suyu', ok: false, why: 'Ekşi meyve sularındandır. Yara varken kaçının.', src: 'K1' },
+    { id: 'domates', name: 'Domates suyu', ok: false, why: 'Ekşidir. Yara varken kaçının.', src: 'K1' },
+    { id: 'cips', name: 'Cips', ok: false, why: 'Serttir. Ağzın içini tahriş edebilir, çizebilir.', src: 'K4' },
+    { id: 'kraker', name: 'Kraker', ok: false, why: 'Kuru ve serttir. Ağzı tahriş edebilir.', src: 'K1' },
+    { id: 'tost', name: 'Kızarmış ekmek, tost', ok: false, why: 'Kuru ve serttir. Ağzı tahriş edebilir.', src: 'K1' },
+    { id: 'biber', name: 'Acı biber, baharatlı yemek', ok: false, why: 'Acı ve baharatlı yiyecekler ağzı tahriş eder.', src: 'K1, K4' },
+    { id: 'tursu', name: 'Turşu', ok: false, why: 'Ekşi ve tuzludur. Yara varken kaçının.', src: 'K1, K5' },
+    { id: 'cay', name: 'Çok sıcak çay', ok: false, why: 'Çok sıcak yiyecek ve içecekler ağzı tahriş eder. Biraz soğumasını bekleyin.', src: 'K1, K4' },
+    { id: 'havuc', name: 'Çiğ havuç', ok: false, why: 'Çiğ sebzeler serttir. Yara varken kaçının.', src: 'K1' },
+    { id: 'greyfurt', name: 'Greyfurt', ok: false, why: 'Ekşidir. Ayrıca kemoterapi ilaçlarıyla etkileşir.', src: 'K1' },
+    { id: 'alkol', name: 'Alkollü içki', ok: false, why: 'Alkolden uzak durun.', src: 'K1, K5' }
+  ];
+  var G = { deck: [], i: 0, score: 0, done: false };
+  function figSvg(id, size) { return '<svg viewBox="0 0 96 96" aria-hidden="true"' + (size ? ' style="width:' + size + ';height:' + size + '"' : '') + '><circle cx="48" cy="48" r="46" class="f-plate"/>' + FIG[id] + '</svg>'; }
+  function gNew() {
+    var yes = shuffle(FOODS.filter(function (f) { return f.ok; })).slice(0, 6);
+    var no = shuffle(FOODS.filter(function (f) { return !f.ok; })).slice(0, 6);
+    G.deck = shuffle(yes.concat(no)); G.i = 0; G.score = 0; G.done = false;
+    $('#gEnd').hidden = true; $('#gPlay').hidden = false; gShow();
+  }
+  function gShow() {
+    var f = G.deck[G.i];
+    $('#gStep').textContent = 'Kart ' + (G.i + 1) + ' / ' + G.deck.length;
+    $('#gBar').style.width = ((G.i + 1) / G.deck.length * 100) + '%';
+    $('#gCard').innerHTML = figSvg(f.id) + '<p class="name say">' + esc(f.name) + '</p>';
+    $('#gBtns').hidden = false; $('#gFb').hidden = true; $('#gNext').hidden = true; G.done = false;
+  }
+  $('#gBtns').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-ans]'); if (!b || G.done) return;
+    stopSpeech();
+    G.done = true;
+    var f = G.deck[G.i], pick = b.getAttribute('data-ans') === '1', right = pick === f.ok;
+    if (right) G.score++;
+    var fb = $('#gFb');
+    fb.className = 'fb ' + (right ? 'good' : 'bad');
+    fb.innerHTML = '<p class="verdict">' + icon(right ? 'i-check' : 'i-info') + (right ? 'Doğru bildiniz.' : 'Bir daha bakalım.') + '</p>' +
+      '<p>' + esc(f.name) + ': <span class="tag ' + (f.ok ? 'yes' : 'no') + '">' + (f.ok ? 'Uygun' : 'Kaçının') + '</span></p>' +
+      '<p>' + esc(f.why) + '</p><p class="src">Kaynak: ' + f.src + '</p>';
+    fb.hidden = false; $('#gBtns').hidden = true;
+    var nx = $('#gNext'); nx.hidden = false;
+    nx.innerHTML = (G.i < G.deck.length - 1 ? 'Sonraki kart' : 'Sonucu gör') + icon('i-chev-r');
+    nx.focus({ preventScroll: true });
+  });
+  $('#gNext').addEventListener('click', function () { stopSpeech(); if (G.i < G.deck.length - 1) { G.i++; gShow(); window.scrollTo(0, 0); } else gEnd(); });
+  function gEnd() {
+    var yes = FOODS.filter(function (f) { return f.ok; }), no = FOODS.filter(function (f) { return !f.ok; });
+    function li(f) { return '<li>' + figSvg(f.id, '2.25rem') + '<span>' + esc(f.name) + '</span></li>'; }
+    var e = $('#gEnd');
+    e.innerHTML = '<div class="result ok"><div class="rh"><span class="ri">' + icon('i-check') + '</span><h2>' + G.deck.length + ' kartın ' + G.score + ' tanesini doğru bildiniz</h2></div></div>' +
+      '<div class="cols"><div class="note"><h2><span class="tag yes">Uygun</span></h2><ul class="list">' + yes.map(li).join('') + '</ul><p class="src">Kaynak: K1</p></div>' +
+      '<div class="note"><h2><span class="tag no">Kaçının</span></h2><ul class="list">' + no.map(li).join('') + '</ul><p class="src">Kaynak: K1, K4, K5</p></div></div>' +
+      '<div class="note soft"><h2>Yemek ipuçları</h2><ul class="list">' +
+      '<li>' + icon('i-drop') + '<span>Bol sıvı alın.</span></li>' +
+      '<li>' + icon('i-check') + '<span>Kuru yiyecekleri su veya yağla yumuşatın.</span></li>' +
+      '<li>' + icon('i-check') + '<span>Yiyecekleri doğrayın, ezin veya blenderden geçirin. Böylece ağızda daha kısa kalır.</span></li>' +
+      '<li>' + icon('i-check') + '<span>Kalorisi ve proteini yüksek yiyecekler seçin.</span></li>' +
+      '</ul><p class="src">Kaynak: K1, K4</p></div>' +
+      '<div class="row2"><button class="btn btn-primary" type="button" id="gAgain">' + icon('i-reset') + 'Yeniden oyna</button><a class="btn btn-ghost" href="#ana">' + icon('i-home') + 'Ana sayfa</a></div>';
+    $$('.cols .list li', e).forEach(function (l) { l.style.gridTemplateColumns = '2.25rem minmax(0,1fr)'; l.style.alignItems = 'center'; });
+    $('#gPlay').hidden = true; e.hidden = false; window.scrollTo(0, 0);
+    $('#gAgain').addEventListener('click', function () { stopSpeech(); gNew(); window.scrollTo(0, 0); });
+  }
+  gNew();
+
+  /* ===== 5. Günlük takip ===== */
+  var LEVEL = { ok: 'Değişiklik yok', warn: 'Değişiklik var', danger: 'Hemen arama' };
+  function fmtDay(d, opts) { try { return d.toLocaleDateString('tr-TR', opts); } catch (e) { return dayKey(d); } }
+  function renderTrack() {
+    var t = today(), done = 0;
+    $('#trDate').textContent = 'Bugün, ' + fmtDay(new Date(), { day: 'numeric', month: 'long', weekday: 'long' });
+    $('#trSlots').innerHTML = SLOTS.map(function (s) {
+      var v = t[s[0]] || {};
+      if (v.f) done++; if (v.g) done++;
+      return '<div class="slot"><h3>' + s[1] + '</h3><div class="row2">' +
+        '<button class="tog" type="button" data-slot="' + s[0] + '" data-k="f" aria-pressed="' + !!v.f + '"><span class="box">' + icon('i-check') + '</span>Diş fırçaladım</button>' +
+        '<button class="tog" type="button" data-slot="' + s[0] + '" data-k="g" aria-pressed="' + !!v.g + '"><span class="box">' + icon('i-check') + '</span>Gargara yaptım</button>' +
+        '</div></div>';
+    }).join('');
+    $('#trCount').textContent = 'Bugün ' + done + ' / 8 bakım işaretlendi.';
+    var c = t.check;
+    $('#trCheck').innerHTML = c
+      ? '<p><span class="chip ' + c.level + '"><i></i>' + LEVEL[c.level] + '</span> <span class="muted small">Saat ' + c.time + '</span></p>'
+      : '<p class="muted">Bugün henüz kontrol yapılmadı.</p><a class="btn btn-ghost btn-block" href="#kontrol" style="margin-top:.6rem">' + icon('i-mouth') + 'Şimdi kontrol et</a>';
+    var rows = '<thead><tr><th>Gün</th>' + SLOTS.map(function (s) { return '<th>' + (s[0] === 'gece' ? 'Gece' : s[1]) + '</th>'; }).join('') + '<th>Ağız</th></tr></thead><tbody>';
+    for (var k = 6; k >= 0; k--) {
+      var d = new Date(); d.setDate(d.getDate() - k);
+      var day = db.days[dayKey(d)] || {};
+      rows += '<tr' + (k === 0 ? ' class="today"' : '') + '><td>' + (k === 0 ? 'Bugün' : esc(fmtDay(d, { weekday: 'short', day: 'numeric' }))) + '</td>';
+      SLOTS.forEach(function (s) {
+        var v = day[s[0]] || {}, n = (v.f ? 1 : 0) + (v.g ? 1 : 0);
+        var lbl = n === 2 ? 'Fırçalama ve gargara yapıldı' : n === 1 ? (v.f ? 'Fırçalama yapıldı' : 'Gargara yapıldı') : 'Yapılmadı';
+        rows += '<td><i class="d' + (n === 2 ? ' full' : n === 1 ? ' half' : '') + '" title="' + lbl + '"></i><span class="vh">' + lbl + '</span></td>';
+      });
+      rows += '<td>' + (day.check ? '<i class="d st-' + day.check.level + '" title="' + LEVEL[day.check.level] + '"></i><span class="vh">' + LEVEL[day.check.level] + '</span>' : '<span class="muted">–</span>') + '</td></tr>';
+    }
+    $('#trWeek').innerHTML = rows + '</tbody>';
+    $('#trStoreWarn').hidden = storeOk;
+  }
+  $('#trSlots').addEventListener('click', function (e) {
+    var b = e.target.closest('.tog'); if (!b) return;
+    var t = today(), s = b.getAttribute('data-slot'), k = b.getAttribute('data-k');
+    t[s] = t[s] || {}; t[s][k] = !t[s][k]; save(); renderTrack();
+    var nb = $('.tog[data-slot="' + s + '"][data-k="' + k + '"]'); if (nb) nb.focus({ preventScroll: true });
+  });
+  $('#trClear').addEventListener('click', function () { $('#trConfirm').hidden = false; $('#trYes').focus(); });
+  $('#trNo').addEventListener('click', function () { $('#trConfirm').hidden = true; });
+  $('#trYes').addEventListener('click', function () { db.days = {}; delete db.tb; save(); $('#trConfirm').hidden = true; renderTrack(); toast('Tüm kayıtlar silindi.'); });
+
+  /* ===== 6. Öğrendiklerimi anlatayım ===== */
+  var TB = [
+    { topic: 'Gargara', q: 'Gargarayı nasıl hazırlıyorsunuz ve ne zaman yapıyorsunuz?', keys: ['1 su bardağı suya 1 çay kaşığı karbonat', 'Yemeklerden sonra ve yatmadan önce ağzı bolca çalkalamak', 'Şikâyet fazlaysa 2 saatte bir', 'Alkollü veya gliserinli hazır gargara kullanmamak'] },
+    { topic: 'Diş fırçalama', q: 'Dişlerinizi nasıl fırçalıyorsunuz?', keys: ['Yumuşak kıllı fırça, kullanmadan önce sıcak suyla yıkamak', 'Naneli olmayan, hafif tatlı macun', 'Her yemekten sonra ve yatmadan önce, 2-3 dakika', 'Dişin diş etiyle birleştiği yer, diş etleri ve dil', 'Yara ve ağrı çoksa fırça yerine parmağa sarılı steril gazlı bez'] },
+    { topic: 'Beslenme', q: 'Ağzınızda yara varken hangi yiyeceklerden kaçınırsınız, neler yersiniz?', keys: ['Kaçınılacaklar: ekşi (limon, portakal, domates suyu), acı-baharatlı, tuzlu, sert (cips, kraker), çok sıcak, alkol', 'Uygun olanlar: püre, sütlaç, muhallebi, muz, yumuşak yumurta, makarna', 'Bol sıvı, yiyecekleri yumuşatmak veya ezmek'] },
+    { topic: 'Acil durumlar', q: 'Hangi durumlarda randevuyu beklemeden ekibinizi ararsınız?', keys: ['38 °C veya üzerinde ateş', 'Herhangi bir yerde kanama, diş etlerinde aşırı kanama', 'Yeni veya artan nefes darlığı', 'Yemeyi engelleyen ağız yaraları, yutma güçlüğü, yiyip içememe'] },
+    { topic: 'İlaçlar', q: 'Ağrı kesici, bitki çayı veya vitamin kullanmadan önce ne yaparsınız?', keys: ['Önce doktora veya hemşireye danışmak', 'Aspirin türü ağrı kesiciler kanama riskini artırır, kullanılmaz', 'Düzenli kullanılan ilaçlar sormadan bırakılmaz'] }
+  ];
+  var TBL = { ok: ['Doğru anlattı', 'res-ok'], re: ['Tekrar anlatıldı, şimdi doğru', 'res-re'], gap: ['Hâlâ eksik', 'res-gap'] };
+  var tb = { i: 0, res: [] };
+  function showOnly(id) { ['tbMenu', 'tbRun', 'tbEnd', 'qzRun', 'qzEnd'].forEach(function (x) { $('#' + x).hidden = x !== id; }); window.scrollTo(0, 0); }
+  function sumTable(rec) {
+    return '<table class="sum"><thead><tr><th>Konu</th><th>Sonuç</th></tr></thead><tbody>' +
+      rec.res.map(function (r, k) { return '<tr><td>' + esc(TB[k].topic) + '</td><td class="' + TBL[r][1] + '">' + TBL[r][0] + '</td></tr>'; }).join('') + '</tbody></table>';
+  }
+  function showTbMenu() {
+    showOnly('tbMenu');
+    var l = $('#tbLast');
+    if (db.tb && db.tb.res && db.tb.res.length === TB.length) {
+      l.innerHTML = '<div class="note" data-nosay><h3>Son değerlendirme: ' + esc(db.tb.date) + '</h3>' + sumTable(db.tb) + '</div>';
+    } else l.innerHTML = '';
+  }
+  function tbShow() {
+    var q = TB[tb.i];
+    $('#tbStep').textContent = 'Soru ' + (tb.i + 1) + ' / ' + TB.length;
+    $('#tbBar').style.width = ((tb.i + 1) / TB.length * 100) + '%';
+    $('#tbQ').textContent = q.q;
+    $('#tbKeys').innerHTML = q.keys.map(function (k) { return '<li>' + esc(k) + '</li>'; }).join('');
+    $('details.keys').open = false;
+  }
+  $('#tbStart').addEventListener('click', function () { stopSpeech(); tb = { i: 0, res: [] }; showOnly('tbRun'); tbShow(); });
+  $('#tbRun').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-tb]'); if (!b) return;
+    stopSpeech();
+    tb.res[tb.i] = b.getAttribute('data-tb');
+    if (tb.i < TB.length - 1) { tb.i++; tbShow(); window.scrollTo(0, 0); return; }
+    var d = new Date();
+    db.tb = { date: fmtDay(d, { day: 'numeric', month: 'long', year: 'numeric' }) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()), res: tb.res.slice() };
+    save();
+    var okN = tb.res.filter(function (r) { return r !== 'gap'; }).length;
+    var gaps = tb.res.map(function (r, k) { return r === 'gap' ? TB[k].topic : null; }).filter(Boolean);
+    $('#tbEnd').innerHTML = '<div class="result ' + (gaps.length ? 'warn' : 'ok') + '"><div class="rh"><span class="ri">' + icon(gaps.length ? 'i-info' : 'i-check') + '</span><h2>' + TB.length + ' konunun ' + okN + ' tanesi anlaşıldı</h2></div>' +
+      (gaps.length ? '<p>Tekrar konuşulacak konular: ' + esc(gaps.join(', ')) + '.</p>' : '<p>Tebrikler. Öğrendiklerinizi çok güzel anlattınız.</p>') + '</div>' +
+      '<div class="note" data-nosay><h3>Hemşire değerlendirmesi: ' + esc(db.tb.date) + '</h3>' + sumTable(db.tb) + '<p class="muted small">Bu özet yalnızca bu telefonda saklanır.</p></div>' +
+      '<div class="row2"><button class="btn btn-ghost" type="button" id="tbMenuBtn">' + icon('i-chev-l') + 'Geri</button><a class="btn btn-primary" href="#ana">' + icon('i-home') + 'Ana sayfa</a></div>';
+    showOnly('tbEnd');
+    $('#tbMenuBtn').addEventListener('click', function () { stopSpeech(); showTbMenu(); });
+  });
+
+  var QZ = [
+    { s: 'Gargara için 1 su bardağı suya 1 çay kaşığı karbonat koyarım.', a: true, why: 'Bu suyla yemeklerden sonra ve yatmadan önce ağzınızı bolca çalkalayın.', src: 'K1' },
+    { s: 'Alkollü hazır gargaralar ağız yaralarına iyi gelir.', a: false, why: 'Alkollü ve gliserinli hazır gargaralar kullanılmaz.', src: 'K1, K4' },
+    { s: 'Ağrım olursa kendi başıma aspirin alabilirim.', a: false, why: 'Aspirin türü ağrı kesiciler kanama riskini artırır. Her ağrı kesiciyi ekibinize danışarak kullanın.', src: 'K4, K1' },
+    { s: 'Ateşim 38 °C veya üzerindeyse randevumu beklemeden ekibimi ararım.', a: true, why: 'Bu, hemen haber vermeniz gereken bir durumdur.', src: 'K5, K1' },
+    { s: 'Ağzımda yara varken limon ve turşu yiyebilirim.', a: false, why: 'Ağzınızda yara varken ekşi ve tuzlu yiyeceklerden kaçının.', src: 'K1' }
+  ];
+  var qz = { i: 0, score: 0, done: false };
+  function qzShow() {
+    $('#qzStep').textContent = 'Soru ' + (qz.i + 1) + ' / ' + QZ.length;
+    $('#qzBar').style.width = ((qz.i + 1) / QZ.length * 100) + '%';
+    $('#qzS').textContent = QZ[qz.i].s;
+    $('#qzBtns').hidden = false; $('#qzFb').hidden = true; $('#qzNext').hidden = true; qz.done = false;
+  }
+  $('#qzStart').addEventListener('click', function () { stopSpeech(); qz = { i: 0, score: 0, done: false }; showOnly('qzRun'); qzShow(); });
+  $('#qzBtns').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-qz]'); if (!b || qz.done) return;
+    stopSpeech(); qz.done = true;
+    var q = QZ[qz.i], right = (b.getAttribute('data-qz') === '1') === q.a;
+    if (right) qz.score++;
+    var fb = $('#qzFb');
+    fb.className = 'fb ' + (right ? 'good' : 'bad');
+    fb.innerHTML = '<p class="verdict">' + icon(right ? 'i-check' : 'i-info') + (right ? 'Doğru bildiniz.' : 'Bir daha bakalım.') + '</p>' +
+      '<p>Bu cümle <span class="tag ' + (q.a ? 'yes' : 'no') + '">' + (q.a ? 'Doğru' : 'Yanlış') + '</span></p><p>' + esc(q.why) + '</p><p class="src">Kaynak: ' + q.src + '</p>';
+    fb.hidden = false; $('#qzBtns').hidden = true;
+    var nx = $('#qzNext'); nx.hidden = false;
+    nx.innerHTML = (qz.i < QZ.length - 1 ? 'Sonraki soru' : 'Sonucu gör') + icon('i-chev-r');
+    nx.focus({ preventScroll: true });
+  });
+  $('#qzNext').addEventListener('click', function () {
+    stopSpeech();
+    if (qz.i < QZ.length - 1) { qz.i++; qzShow(); window.scrollTo(0, 0); return; }
+    $('#qzEnd').innerHTML = '<div class="result ' + (qz.score === QZ.length ? 'ok' : 'warn') + '"><div class="rh"><span class="ri">' + icon(qz.score === QZ.length ? 'i-check' : 'i-info') + '</span><h2>' + QZ.length + ' sorunun ' + qz.score + ' tanesini doğru bildiniz</h2></div>' +
+      '<p>' + (qz.score === QZ.length ? 'Tebrikler.' : 'Emin olmadığınız konuları hemşirenize sorun.') + '</p></div>' +
+      '<div class="row2"><button class="btn btn-ghost" type="button" id="qzMenuBtn">' + icon('i-chev-l') + 'Geri</button><a class="btn btn-primary" href="#ana">' + icon('i-home') + 'Ana sayfa</a></div>';
+    showOnly('qzEnd');
+    $('#qzMenuBtn').addEventListener('click', function () { stopSpeech(); showTbMenu(); });
+  });
+
+  /* ===== 7. Telefon düğmeleri ===== */
+  function phoneReady() { return SERVIS_TELEFONU && SERVIS_TELEFONU.indexOf('[') < 0; }
+  function bindPhones(root) {
+    $$('[data-call]', root).forEach(function (a) { if (phoneReady()) a.setAttribute('href', 'tel:' + SERVIS_TELEFONU.replace(/[^\d+]/g, '')); });
+    $$('[data-num]', root).forEach(function (n) { n.textContent = SERVIS_TELEFONU; });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-call]');
+    if (a && !phoneReady()) {
+      if (current === 'acil') { e.preventDefault(); toast('Servis telefonu henüz eklenmedi. Hemşireniz numarayı ekleyecek.'); }
+    }
+    var c = e.target.closest('[data-copy]');
+    if (c) {
+      var num = SERVIS_TELEFONU;
+      var done = function () { toast('Numara kopyalandı: ' + num); };
+      var fallback = function () { var n = $('[data-num]'); var r = document.createRange(); r.selectNodeContents(n); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); toast('Numarayı seçtim. Uzun basıp kopyalayabilirsiniz.'); };
+      try { navigator.clipboard.writeText(num).then(done, fallback); } catch (err) { fallback(); }
+    }
+  });
+  bindPhones(document);
+
+  /* ===== Başlangıç ===== */
+  render(routeFromHash() || 'ana', false);
+
+  /* Kendi sunucunuzda internetsiz çalışma için (sw.js aynı klasördeyse) */
+  try {
+    if ('serviceWorker' in navigator && window.self === window.top && location.protocol === 'https:') {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    }
+  } catch (e) {}
+})();
+</script>
+</body><!--wrap-->
+</html><!--wrap-->
